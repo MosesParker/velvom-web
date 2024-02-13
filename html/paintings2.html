@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="We are here to provide you caricatures, pencil portraits, stencil art, posters, storyboarding for films">
+    <meta name="keywords"
+        content="velvom, arts and designs, caricature, leaf carving, art, painting, West Mambalam, chennai">
+    <meta name="author" content="Velvom">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Velvom | Arts and Designs">
+    <meta property="og:description"
+        content="We are here to provide you caricatures, pencil portraits, stencil art, posters, storyboarding for films">
+    <meta property="og:image" content="../images/velvom_icon_color.jpg">
+    <meta property="og:url" content="https://www.velvom.com">
+    <meta property="og:type" content="painting Website">
+
+    <title>Velvom | Paintings</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/velvom_icon_color.jpg" type="image/x-icon">
+
+    <!-- CSS for styling -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/font/ivymode-font.css">
+    <link rel="stylesheet" href="../css/font/collier-font.css">
+
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background: url('https://a.travel-assets.com/findyours-php/viewfinder/images/res70/256000/256420-Princeton-University-Art-Museum.jpg') no-repeat;
+            background-size: cover;
+        }
+    
+        .mains-box {
+            width: 100%;
+            min-height: 80vh;
+        }
+    
+        .mains-box .left-side {
+            display: block;
+            text-align: center;
+            transform: translate(50%, 2%);
+        }
+    
+        .frame {
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+            margin-top: 2%;
+        }
+    
+        .glass::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            z-index: 1;
+            transform: translateZ(0);
+        }
+    
+        .frame img {
+            width: 400px;
+            height: 520px;
+            object-fit: cover;
+            z-index: 2;
+            position: relative;
+            border: 10px solid;
+            border-image: linear-gradient(to bottom right, #8B4513, #DAA520, #8B4513);
+           
+        }
+    
+        .frame .borderss {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 5px solid;
+            border-image: linear-gradient(to bottom right, #8B4513, #DAA520, #8B4513) 1;
+            z-index: 3;
+        }
+    
+        .frame .shadowss {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+            z-index: 4;
+            transition: all 0.5s ease-in-out;
+            opacity: 1;
+        }
+    
+        .frame:hover .shadowss {
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        .frame-text
+        {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .painting-type
+        {
+            width: 30%;
+            padding: 20px;
+            background: url('https://i.etsystatic.com/11005779/r/il/a705cb/2719154464/il_570xN.2719154464_guyd.jpg');
+            border: 5px solid #8B4513;
+            box-shadow: inset 0 0 20px rgba(72, 70, 70, 0.5);
+            color: #8B4513;
+            font-weight: bolder;
+        }
+        .painting-details
+        {
+            width: 40%;
+            padding: 10px;
+            color: #DAA520;
+            font-weight: bolder;
+        }
+    </style>
+    
+</head>
+
+<body id="body">
+    <header>
+        <div data-aos="fade-left" data-aos-duration="2000" class="title-icon"><img
+                src="../images/velvom_icon_color.jpg"></div>
+        <div data-aos="fade-right" data-aos-duration="2000" class="menu-section">
+            <p class="menuletter" style="color: aliceblue;">MENU</p>
+            <div class="menu-icon nav-icon">
+                <span style="background: aliceblue;"></span>
+                <span style="background: aliceblue;"></span>
+                <span style="background: aliceblue;"></span>
+            </div>
+        </div>
+    </header>
+    <!-- Full Menu -->
+    <div class="full-menu">
+        <center>
+            <div class="fullmenu-content">
+                <ul class="page-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="category.html">Category</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="full-painting.html">Paintings</a></li>
+                    <li><a href="event.html">Event</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </center>
+        <a href="#0" class="modal-close"></a>
+    </div>
+    <div id="cd-transition-layer" class="cd-transition-layer visible opening">
+        <div class="bg-layer"></div>
+    </div>
+
+    <nav data-aos="fade-right" data-aos-duration="3000" class="social-link-for-desktop">
+        <ul>
+            <li class="social-li-link1"><a href="https://www.instagram.com/artfromheart2020/" class="social-link-for-desktop-link1"><i
+                        class="fa fa-instagram"></i></a></li>
+            <li class="social-li-link2"><a href="https://chat.whatsapp.com/IFuV7kf6T9MJMR0jAdyuF8" class="social-link-for-desktop-link2" style="font-size: 20px;"><i
+                        class="fa fa-whatsapp"></i></a></li>
+            <li class="social-li-link3"><a href="https://www.youtube.com/@velvomarts" class="social-link-for-desktop-link3" style="font-size: 20px;"><i
+                        class="fa fa-youtube"></i></a></li>
+            <li class="social-li-link4"><a href="https://www.linkedin.com/in/velvom-arts-and-designs-b73055237/" class="social-link-for-desktop-link4" style="font-size: 20px;"><i
+                        class="fa fa-linkedin"></i></a></li>
+        </ul>
+    </nav>
+    <div class="social-link-for-mobile-tab">
+        <div class="social-link-for-mobile-tab-shareicon">
+            <i class="fa fa-share-alt"></i>
+        </div>
+        <div class="social-link-for-mobile-tab-link1">
+            <i class="fa fa-instagram"></i>
+        </div>
+        <div class="social-link-for-mobile-tab-link2">
+            <i class="fa fa-whatsapp"></i>
+        </div>
+        <div class="social-link-for-mobile-tab-link3">
+            <i class="fa fa-youtube"></i>
+        </div>
+    </div>
+
+    <div class="mains-box">
+        <div class="column left-side">
+            <div class="frame-text">
+                <p class="painting-type">Digital Caricature</p>
+            </div>
+            <div class="frame">
+                <div class="glass"></div>
+                <div class="borderss"></div>
+                <div class="shadowss"></div>
+                <img src="../images/types1.1.jpg" alt="Your Painting">
+               
+            </div>
+            <div class="frame-text">
+                <p class="painting-details">Giant Blue River</p>
+            </div>
+            
+        </div>
+        <div class="column center-side">
+            <a href="contact.html"><button>Go Inside</button></a>
+            <img style="width: 73.50px; height: 98.50px" src="https://via.placeholder.com/73x98" />
+        </div>
+    </div>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.ripples.js"></script>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/horizontal-scroll.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

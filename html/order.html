@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="We are here to provide you caricatures, pencil portraits, stencil art, posters, storyboarding for films">
+    <meta name="keywords"
+        content="velvom, arts and designs, caricature, leaf carving, art, painting, West Mambalam, chennai">
+    <meta name="author" content="Velvom">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Velvom | Arts and Designs">
+    <meta property="og:description"
+        content="We are here to provide you caricatures, pencil portraits, stencil art, posters, storyboarding for films">
+    <meta property="og:image" content="../images/velvom_icon_color.jpg">
+    <meta property="og:url" content="https://www.velvom.com">
+    <meta property="og:type" content="painting Website">
+
+    <title>Velvom | Order Arts</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/velvom_icon_color.jpg" type="image/x-icon">
+
+    <!-- CSS for styling -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/order.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/font/ivymode-font.css">
+    <link rel="stylesheet" href="../css/font/collier-font.css">
+</head>
+
+
+<body id="body" class="order-body">
+    <header>
+        <div data-aos="fade-left" data-aos-duration="2000" class="title-icon"><img
+                src="../images/velvom_title_icon.png"></div>
+        <div data-aos="fade-right" data-aos-duration="2000" class="menu-section">
+            <p class="menuletter">MENU</p>
+            <div class="menu-icon nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <!-- Full Menu -->
+    <div class="full-menu">
+        <center>
+            <div class="fullmenu-content">
+                <ul class="page-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="category.html">Category</a></li>
+                    <li><a class="active" href="order.html">Order</a></li>
+                    <li><a href="full-painting.html">Paintings</a></li>
+                    <li><a href="event.html">Event</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </center>
+        <a href="#0" class="modal-close"></a>
+    </div>
+    <div id="cd-transition-layer" class="cd-transition-layer visible opening">
+        <div class="bg-layer"></div>
+    </div>
+    <center>
+        <div class="order-page-main-section" id="order-page-main-section">
+            <div class="order-page-file-upload-section" id="order-page-file-upload-section">
+                <h3 id="order-page-main-section-headline">Please upload the delightful image</h3>
+                <label for="order-page-upload-file-image" id="order-page-file-upload-section-label">
+                    <img src="../images/icons/file-upload.png" alt="File upload icon"
+                        id="order-page-uploaded-image-view">
+                    <input type="file" id="order-page-upload-file-image" name="file" style="display: none;"
+                        accept="image/*" onchange="displayImage()">
+
+                    <div class="order-page-file-upload-reset-next-buttons"
+                        id="order-page-file-upload-reset-next-buttons">
+                        <button onclick="resetTheFileUploadImage()">RESET</button> <button
+                            onclick="goToNextToEnterArtDetails1()">NEXT</button>
+                    </div>
+                </label>
+            </div>
+            <div class="order-page-uploaded-file-details-entry-section"
+                id="order-page-uploaded-file-details-entry-section">
+                <div class="order-page-uploaded-file-details-entry-subsection1"
+                    id="order-page-uploaded-file-details-entry-subsection1">
+                    <h1 id="order-page-uploaded-file-details-entry-heading"></h1>
+                    <div class="step-indicator">
+                        <div class="step">
+                            <span class="step-number" id="order-page-step-indicator-step1">1</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number" id="order-page-step-indicator-step2">2</span>
+                        </div>
+                        <div class="step">
+                            <span class="step-number" id="order-page-step-indicator-step3">3</span>
+                        </div>
+                    </div>
+
+                    <form name="orderDetailsEntryForm" method="POST">
+                        <div class="details-entry details-entry-step1" id="order-page-subsection-details-entry1">
+                            <p>Width (cm) :</p>  <input type="text" name="paintingName" placeholder="Name of this painting (*) eg. My world, Soulmate, etc..." required>
+                            <textarea name="paintingDescription"   placeholder="Your Lovely Description (How much it's special to you ?)"></textarea>
+                            <select name="paintingType">
+                                <option value="0">--- SELECT PAINTING TYPE * ---</option>
+                                <option value="1">Caricature</option>
+                                <option value="2">Printed Posters</option>
+                                <option value="3">Digital Painting</option>
+                                <option value="4">Stencil Art</option>
+                                <option value="5">Leaf Craving</option>
+                                <option value="6">Pencil Portrait</option>
+                            </select>
+                            <h6>( <span>*</span> ) considered as mandatory.</h6>
+                            <hr />
+                        </div>
+                        <div class="details-entry details-entry-step2" id="order-page-subsection-details-entry2">
+                            <div class="sub-painting-types-section">
+                                <h2>Choose The Type :</h2>
+                                <div class="column">
+                                    <p class="sub-painting-types-in-step2" onclick="setSubPaintingType(0)">Digital
+                                        Caricature - Full-Body</p>
+                                </div>
+                                <div class="column">
+                                    <p class="sub-painting-types-in-step2" onclick="setSubPaintingType(1)">Color
+                                        Caricature - Full-Body</p>
+                                </div>
+                                <div class="column">
+                                    <p class="sub-painting-types-in-step2" onclick="setSubPaintingType(2)">B &amp; W
+                                        Caricature - Full-Body</p>
+                                </div>
+                                <div class="column">
+                                    <p class="sub-painting-types-in-step2" onclick="setSubPaintingType(3)">B &amp; W
+                                        Caricature - Only Face</p>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="provide-width-height-section">
+                                <div class="column">
+                                    <p> <i class="fa fa-info-circle" onclick="openSampleSizeInfoPopup()" title="Please click to view some of the sample page size details"></i></p>
+                                </div>
+                                <div class="column">
+                                    <p>Width (cm) :</p> <input type="number" name="selectedPageSizeInWidth" placeholder="0" title="Please provide the size in cm. Incase doubt, click the info. icon">
+                                </div>
+                                <div class="column">
+                                    <p>Height (cm) :</p> <input type="number" name="selectedPageSizeInHeight" placeholder="0" title="Please provide the size in cm. Incase doubt, click the info. icon">
+                                </div>
+                                
+                            </div>
+                            <hr />
+                        </div>
+                        <div class="details-entry details-entry-step3" id="order-page-subsection-details-entry3">
+                            <div class="column provide-extra-notes-section">
+                                <textarea name="paintingDescription3" placeholder="How do you want this art to be look life ? (eg. Use red ink, don't want to use any dark ink.)"></textarea>
+                            </div>
+                            <div class="column provide-due-date-section">
+                                <p>Expected Due Date :</p><input type="date" name="dueDate" value="2023-10-14" required readonly>
+                            </div>
+                            <div class="column provide-user-expected-date-section">
+                                <p>Want bit earlier ? </p><div style="display: flex;align-items: center;width: 100%;flex-wrap: wrap;">
+                                 <input type="checkbox" id="needOrderEarlier" name="needOrderEarlier" value="yes" onclick="needOrderBitEarlier()" style="margin: 0;width: auto;margin: 10px;">
+                                 <label for="needOrderEarlier" style="margin: 0;margin-right: 20px ;">Yes</label>
+                                 <input type="date" style="width: 70%;margin-left: auto;opacity: 0;" 
+                                 id="finalExpectedDateByUser" name="finalExpectedDateByUser" value="2023-10-14" 
+                                 title="Kindly provide your final expected date."
+                                 required>
+                             </div>
+                             
+                             
+                            </div>
+                            <h6>( <span>*</span> ) considered as mandatory.</h6>
+                            <hr />
+                        </div>
+                    </form>
+                    <div class="button-container">
+                        <button onclick="goToBackEntryDetailSection()">BACK</button>
+                        <button onclick="goToNextEntryDetailSection()">NEXT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order-page-center-alert-popup" id="order-page-center-alert-popup">
+            <div class="popup-content">
+                <p id="order-page-center-alert-popup-content-text"></p>
+                <button onclick="closeAlertPopup()">Close</button> <!-- Button to close the popup -->
+            </div>
+        </div>
+    </center>
+    <nav data-aos="fade-right" data-aos-duration="3000" class="social-link-for-desktop">
+        <ul>
+            <li class="social-li-link1"><a href="https://www.instagram.com/artfromheart2020/"
+                    class="social-link-for-desktop-link1"><i class="fa fa-instagram"></i></a></li>
+            <li class="social-li-link2"><a href="https://chat.whatsapp.com/IFuV7kf6T9MJMR0jAdyuF8"
+                    class="social-link-for-desktop-link2" style="font-size: 20px;"><i class="fa fa-whatsapp"></i></a>
+            </li>
+            <li class="social-li-link3"><a href="https://www.youtube.com/@velvomarts"
+                    class="social-link-for-desktop-link3" style="font-size: 20px;"><i class="fa fa-youtube"></i></a>
+            </li>
+            <li class="social-li-link4"><a href="https://www.linkedin.com/in/velvom-arts-and-designs-b73055237/"
+                    class="social-link-for-desktop-link4" style="font-size: 20px;"><i class="fa fa-linkedin"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="social-link-for-mobile-tab">
+        <div class="social-link-for-mobile-tab-shareicon">
+            <i class="fa fa-share-alt"></i>
+        </div>
+        <div class="social-link-for-mobile-tab-link1">
+            <i class="fa fa-instagram"></i>
+        </div>
+        <div class="social-link-for-mobile-tab-link2">
+            <i class="fa fa-whatsapp"></i>
+        </div>
+        <div class="social-link-for-mobile-tab-link3">
+            <i class="fa fa-youtube"></i>
+        </div>
+    </div>
+
+
+
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.ripples.js"></script>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/script.js"></script>
+    
+
+    <script>
+        AOS.init();
+
+
+        var uiWidth = $(window).width();
+        var uiHeight = $(window).height();
+        const orderPageMainSection = document.getElementById('order-page-main-section');
+        const orderPageFileUploadSection = document.getElementById('order-page-file-upload-section');
+        const orderPageMainSectionHeadline = document.getElementById('order-page-main-section-headline');
+        const orderPageFileUploadSectionLabel = document.getElementById('order-page-file-upload-section-label');
+        const orderPageUploadedImageView = document.getElementById('order-page-uploaded-image-view');
+        const orderPageUploadFileImage = document.getElementById('order-page-upload-file-image');
+        const orderPageFileUploadResetNextButtons = document.getElementById('order-page-file-upload-reset-next-buttons');
+        const orderPageUploadedFileDetailsEntrySection = document.getElementById('order-page-uploaded-file-details-entry-section');
+        const orderPageUploadedFileDetailsEntrySubSectionSection1 = document.getElementById('order-page-uploaded-file-details-entry-subsection1');
+        const orderPageCenterAlertPopup = document.getElementById('order-page-center-alert-popup');
+        const orderPageCenterAlertPopupContentText = document.getElementById('order-page-center-alert-popup-content-text');
+
+        const orderPageUploadedFileDetailsEntryHeading = document.getElementById('order-page-uploaded-file-details-entry-heading');
+
+        const orderPageStepIndicatorStep1 = document.getElementById('order-page-step-indicator-step1');
+        const orderPageStepIndicatorStep2 = document.getElementById('order-page-step-indicator-step2');
+        const orderPageStepIndicatorStep3 = document.getElementById('order-page-step-indicator-step3');
+
+        const orderPageSubSectionDetailEntry1 = document.getElementById('order-page-subsection-details-entry1');
+        const orderPageSubSectionDetailEntry2 = document.getElementById('order-page-subsection-details-entry2');
+        const orderPageSubSectionDetailEntry3 = document.getElementById('order-page-subsection-details-entry3');
+
+
+
+    //    goToNextToEnterArtDetails1();
+    //    document.orderDetailsEntryForm.paintingName.value = "moses";
+    //    document.orderDetailsEntryForm.paintingType.value = "1";
+    //    goToNextEntryDetailSection();
+
+        function setSubPaintingType(paintingTypeValue) {
+            for (let i = 0; i < document.getElementsByClassName('sub-painting-types-in-step2').length; i++) {
+
+                if (i == paintingTypeValue) {
+                    document.getElementsByClassName('sub-painting-types-in-step2')[i].classList.add('active');
+                }
+                else {
+                    document.getElementsByClassName('sub-painting-types-in-step2')[i].classList.remove('active');
+                }
+            }
+        }
+
+        function needOrderBitEarlier()
+        {
+            var needOrderEarlierCheckboxClicked = document.orderDetailsEntryForm.needOrderEarlier;
+
+            if(needOrderEarlierCheckboxClicked.checked === true)
+            {
+                document.getElementById('finalExpectedDateByUser').style.opacity='1';
+                document.getElementById('finalExpectedDateByUser').style.transition = 'all 0.5s ease-in';
+            }
+            else
+            {
+                document.getElementById('finalExpectedDateByUser').style.opacity='0';
+                document.getElementById('finalExpectedDateByUser').style.transition = 'all 0.5s ease-out';
+            }
+            
+        }
+
+        function openSampleSizeInfoPopup() {
+            let text = '<div style="text-align: left;">'
+                            +'<p>Sample Size in cm.</p><pre style="white-space: pre-wrap; text-transform:none;margin: 20px 10px;">You can also choose the respective sizes.</pre>'
+                            +'<pre style="white-space: pre-wrap;"><input type="radio" name="paperSize" value="a3"> For A3 Size : 29.7 (w) x 42  (h) </pre>'
+                            +'<pre style="white-space: pre-wrap;"><input type="radio" name="paperSize" value="a4"> For A4 Size : 21   (w) x 29.7(h) </pre>'
+                            +'<pre style="white-space: pre-wrap;"><input type="radio" name="paperSize" value="a5"> For A5 Size : 14.85(w) x 21  (h) </pre>'
+                        +' </div>';
+                        
+
+            orderPageCenterAlertPopup.style.display = 'flex';
+            orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
+            orderPageCenterAlertPopupContentText.innerHTML = text;
+        }
+
+        function goToNextEntryDetailSection() {
+
+            const activeStepElement = document.querySelector('.step-number.active');
+
+            if (activeStepElement) {
+                const currentActiveStep = activeStepElement.textContent;
+
+                if (currentActiveStep == 1) {
+                    var uploadedImageName = document.orderDetailsEntryForm.paintingName.value;
+                    var paintingTypeValue = document.orderDetailsEntryForm.paintingType.value;
+
+                    if (uploadedImageName == null || uploadedImageName.length == 0) {
+                        orderPageCenterAlertPopup.style.display = 'flex';
+                        orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
+                        orderPageCenterAlertPopupContentText.innerHTML = 'Please provide name. Its easy to get back to you.';
+                    }
+                    else if (paintingTypeValue == null || paintingTypeValue == 0) {
+                        orderPageCenterAlertPopup.style.display = 'flex';
+                        orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
+                        orderPageCenterAlertPopupContentText.innerHTML = 'Please provide the type';
+                    }
+                    else {
+                        orderPageSubSectionDetailEntry1.style.animation = 'moving_subsection_detail_entry_center_to_left 2s forwards';
+                        orderPageUploadedFileDetailsEntryHeading.style.opacity = 0;
+                        setTimeout(() => {
+                            orderPageUploadedFileDetailsEntryHeading.innerHTML = 'Nothing is special in this world.';
+                            orderPageUploadedFileDetailsEntryHeading.style.opacity = 1;
+                        }, 1000);
+
+                        setTimeout(() => {
+                            orderPageStepIndicatorStep2.style.transition = 'all 0.5s ease-in';
+                            orderPageStepIndicatorStep1.style.transition = 'all 0.5s ease-out';
+                            orderPageStepIndicatorStep2.classList.add('active');
+                            orderPageStepIndicatorStep1.classList.remove('active');
+                            orderPageStepIndicatorStep3.classList.remove('active');
+                            orderPageSubSectionDetailEntry2.style.animation='';
+                            orderPageSubSectionDetailEntry2.style.display = 'flex';
+                        }, 2000);
+                    }
+                }
+                else if (currentActiveStep == 2) {
+                  
+                    const isSubPaintingTypeSelected = document.querySelector('.sub-painting-types-in-step2.active');
+
+                    if(!isSubPaintingTypeSelected)
+                    {
+                        orderPageCenterAlertPopup.style.display = 'flex';
+                        orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
+                        orderPageCenterAlertPopupContentText.innerHTML = 'Please Select the Painting Type';
+                    }
+                    else
+                    {
+                        orderPageSubSectionDetailEntry2.style.animation = 'moving_subsection_detail_entry_center_to_left 2s forwards';
+                        orderPageUploadedFileDetailsEntryHeading.style.opacity = 0;
+                        setTimeout(() => {
+                            orderPageUploadedFileDetailsEntryHeading.innerHTML = 'World is full of surprise and miracles.';
+                            orderPageUploadedFileDetailsEntryHeading.style.opacity = 1;
+                        }, 1000);
+
+                        setTimeout(() => {
+                            orderPageStepIndicatorStep3.style.transition = 'all 0.5s ease-in';
+                            orderPageStepIndicatorStep2.style.transition = 'all 0.5s ease-out';
+                            orderPageStepIndicatorStep3.classList.add('active');
+                            orderPageStepIndicatorStep1.classList.remove('active');
+                            orderPageStepIndicatorStep2.classList.remove('active');
+                            orderPageSubSectionDetailEntry3.style.animation='';
+                            orderPageSubSectionDetailEntry3.style.display = 'flex';
+                        }, 2000);
+                    }
+
+                   
+                }
+                else if (currentActiveStep == 3) {
+                    window.location.href = 'final-order.html';
+
+                }
+
+            }
+
+
+        }
+
+
+        function resetTheFileUploadImage() {
+            orderPageUploadedImageView.src = '../images/icons/file-upload.png';
+            orderPageUploadedImageView.style.animation = '';
+            orderPageUploadedImageView.style.width = '';
+            orderPageUploadedImageView.style.boxShadow = '';
+            orderPageFileUploadResetNextButtons.style.display = '';
+            orderPageMainSectionHeadline.innerHTML = 'Please upload the delightful image';
+            orderPageUploadFileImage.disabled = false;
+            orderPageUploadFileImage.value = '';
+            orderPageFileUploadSectionLabel.style.cursor = '';
+            orderPageFileUploadSectionLabel.style.background = '';
+        }
+
+        function goToNextToEnterArtDetails1() {
+
+            orderPageMainSection.style.display = 'block';
+            orderPageFileUploadSection.style.paddingTop = '30px';
+            orderPageFileUploadSection.style.transition = 'all 1s ease-out';
+            // orderPageFileUploadSection.style.width = (uiWidth >= 1048 ? '40%' : uiWidth >= 768 ? '100%' : '100%');
+            // orderPageFileUploadSection.style.minHeight = (uiWidth >= 1048 ? '80vh' : uiWidth >= 768 ? '60vh' : '60vh');
+            orderPageFileUploadSection.style.width = (uiWidth >= 1048 ? '40%' : uiWidth >= 768 ? '100%' : '100%');
+            orderPageFileUploadSection.style.minHeight = (uiWidth >= 1048 ? '80vh' : uiWidth >= 768 ? '60vh' : '60vh');
+            orderPageFileUploadSection.style.float = 'left';
+
+
+            orderPageFileUploadResetNextButtons.style.display = '';
+            orderPageFileUploadSectionLabel.style.width = '90%';
+            orderPageFileUploadSectionLabel.style.border = 'none';
+            orderPageFileUploadSectionLabel.style.backgroundColor = 'transparent';
+            orderPageFileUploadSectionLabel.style.minHeight = (uiWidth >= 1048 ? '65vh' : uiWidth >= 768 ? '55vh' : '55vh');;
+            orderPageFileUploadSection.style.borderRadius = '0px';
+
+            orderPageUploadedImageView.style.width = '80%';
+            orderPageUploadedImageView.style.height = (uiWidth >= 1048 ? '60vh' : uiWidth >= 768 ? '50vh' : '50vh');;
+            orderPageUploadedImageView.style.objectFit = 'cover';
+
+            orderPageUploadedFileDetailsEntrySection.style.transition = 'all 1s ease-out';
+            orderPageUploadedFileDetailsEntrySection.style.width = (uiWidth >= 1048 ? '60%' : uiWidth >= 768 ? '100%' : '100%');
+           // orderPageUploadedFileDetailsEntrySection.style.minHeight = (uiWidth >= 1048 ? '80vh' : uiWidth >= 768 ?  uiWidth >= 820 ? '73vh' : '71vh' : '50vh');
+
+           orderPageUploadedFileDetailsEntrySection.style.minHeight = (uiHeight >= 600 && uiHeight <= 650 ? '82vh' : uiHeight >= 651 && uiHeight <= 710 ? '81vh' :
+           (uiWidth >= 1048 ? '80vh' : uiWidth >= 768 ?  uiWidth >= 820 ? '60vh' : '70vh' : '50vh'));
+            // orderPageUploadedFileDetailsEntrySection.style.minHeight = ((uiWidth >= 1048 ? (uiHeight >= 600 && uiHeight <= 650 ? '82vh' : uiHeight >= 651 && 
+            // uiHeight <= 710 ? '81vh' : '80vh') : uiWidth >= 768 ?  uiWidth >= 820 ? '73vh' : '71vh' : '50vh'));
+
+            orderPageUploadedFileDetailsEntrySection.style.float = (uiWidth >= 1048 ? 'right' : uiWidth >= 768 ? 'left' : 'left');
+            orderPageUploadedFileDetailsEntrySection.style.marginBottom = (uiWidth >= 1048 ? '0px' : uiWidth >= 768 ? '50px' : '50px');
+            orderPageUploadedFileDetailsEntrySubSectionSection1.style.display = 'block';
+
+            orderPageUploadedFileDetailsEntryHeading.innerHTML = 'Welcome to our new world.';
+            orderPageUploadedFileDetailsEntryHeading.style.opacity = 1;
+            orderPageStepIndicatorStep1.classList.add('active');
+            orderPageStepIndicatorStep2.classList.remove('active');
+            orderPageStepIndicatorStep3.classList.remove('active');
+
+        }
+
+
+        function goToBackEntryDetailSection()
+        {
+            const activeStepElement = document.querySelector('.step-number.active');
+
+            if (activeStepElement) {
+                const currentActiveStep = activeStepElement.textContent;
+
+                if(currentActiveStep==1)
+                {
+                    reUploadFileImage();
+                }
+                if(currentActiveStep==2)
+                {
+                    orderPageSubSectionDetailEntry2.style.animation = 'moving_details_entry_tags_to_center_in_bottom 2s forwards';
+                   
+                        orderPageUploadedFileDetailsEntryHeading.style.opacity = 0;
+                        setTimeout(() => {
+                            
+                            orderPageUploadedFileDetailsEntryHeading.innerHTML = 'Welcome to our new world.';
+                            orderPageUploadedFileDetailsEntryHeading.style.opacity = 1;
+                        }, 1000);
+
+                        setTimeout(() => {
+                            orderPageSubSectionDetailEntry1.style.animation = 'moving_subsection_detail_entry_left_to_center 2s forwards';
+                            orderPageStepIndicatorStep1.style.transition = 'all 0.5s ease-in';
+                            orderPageStepIndicatorStep2.style.transition = 'all 0.5s ease-out';
+                            orderPageStepIndicatorStep1.classList.add('active');
+                            orderPageStepIndicatorStep2.classList.remove('active');
+                            orderPageStepIndicatorStep3.classList.remove('active');
+                        }, 2000);
+                }
+                if(currentActiveStep==3)
+                {
+                    orderPageSubSectionDetailEntry3.style.animation = 'moving_details_entry_tags_to_center_in_bottom 2s forwards';
+                   
+                        orderPageUploadedFileDetailsEntryHeading.style.opacity = 0;
+                        setTimeout(() => {
+                            orderPageUploadedFileDetailsEntryHeading.innerHTML = 'Nothing is special in this world.';
+                            orderPageUploadedFileDetailsEntryHeading.style.opacity = 1;
+                        }, 1000);
+
+                        setTimeout(() => {
+                            orderPageSubSectionDetailEntry2.style.animation='';
+                            orderPageSubSectionDetailEntry2.style.display = 'flex';
+                            orderPageStepIndicatorStep2.style.transition = 'all 0.5s ease-in';
+                            orderPageStepIndicatorStep3.style.transition = 'all 0.5s ease-out';
+                            orderPageStepIndicatorStep2.classList.add('active');
+                            orderPageStepIndicatorStep1.classList.remove('active');
+                            orderPageStepIndicatorStep3.classList.remove('active');
+                        }, 2000);
+                }
+            }
+        }
+
+        function reUploadFileImage() {
+            orderPageMainSection.style.display = '';
+            orderPageFileUploadSection.style.paddingTop = '';
+            orderPageFileUploadSection.style.transition = '';
+            orderPageFileUploadSection.style.width = '';
+            orderPageFileUploadSection.style.minHeight = '';
+            orderPageFileUploadSection.style.float = '';
+
+
+            orderPageFileUploadResetNextButtons.style.display = '';
+            orderPageFileUploadSectionLabel.style.width = '';
+            orderPageFileUploadSectionLabel.style.border = '';
+            orderPageFileUploadSectionLabel.style.backgroundColor = '';
+            orderPageFileUploadSectionLabel.style.minHeight = '';
+            orderPageFileUploadSection.style.borderRadius = '';
+
+            orderPageUploadedImageView.style.width = '';
+            orderPageUploadedImageView.style.height = '';
+            orderPageUploadedImageView.style.objectFit = '';
+
+            orderPageUploadedFileDetailsEntrySection.style.transition = '';
+            orderPageUploadedFileDetailsEntrySection.style.width = '';
+            orderPageUploadedFileDetailsEntrySection.style.float = '';
+            orderPageUploadedFileDetailsEntrySubSectionSection1.style.display = '';
+
+            resetTheFileUploadImage();
+        }
+
+
+        function displayImage() {
+            if (orderPageUploadFileImage.files && orderPageUploadFileImage.files[0]) {
+
+                if (orderPageUploadFileImage.files[0].type.startsWith('video/') || orderPageUploadFileImage.files[0].type.startsWith('application/') ||
+                    orderPageUploadFileImage.files[0].type.startsWith('image/gif')) {
+                    orderPageCenterAlertPopup.style.display = 'flex';
+                    orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
+                    orderPageCenterAlertPopupContentText.innerHTML = 'You are providing a invalid file. Should be Image';
+                }
+                else {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        orderPageUploadedImageView.src = e.target.result;
+
+                        var orderPageUploadedImageViewWidth = uiWidth >= 1048 ? '35%' : uiWidth >= 768 ? '50%' : '65%';
+
+                        orderPageUploadedImageView.style.animation = 'none';
+                        orderPageUploadedImageView.style.width = orderPageUploadedImageViewWidth;
+                        orderPageUploadedImageView.style.boxShadow = '5px 10px 10px 5px rgb(218, 211, 211)';
+
+                    };
+
+                    reader.readAsDataURL(orderPageUploadFileImage.files[0]);
+                    orderPageMainSectionHeadline.innerHTML = orderPageUploadFileImage.value.split(/\\|\//)[orderPageUploadFileImage.value.split(/\\|\//).length - 1];
+
+                    orderPageFileUploadResetNextButtons.style.display = 'block';
+                    orderPageUploadFileImage.disabled = true;
+                    orderPageFileUploadSectionLabel.style.cursor = 'auto';
+                    orderPageFileUploadSectionLabel.style.background = '#D4C7AF';
+                }
+            }
+        }
+
+        function closeAlertPopup() {
+        
+
+            if(document.querySelector('input[name="paperSize"]:checked') != null)
+            {
+                
+                var paperSize = document.querySelector('input[name="paperSize"]:checked');
+                if (paperSize) {
+                    
+                    if(paperSize.value === 'a3' || paperSize.value === 'A3')
+                    {
+                        document.orderDetailsEntryForm.selectedPageSizeInWidth.value = 29.7;
+                        document.orderDetailsEntryForm.selectedPageSizeInHeight.value = 42;
+                    }
+                    else if(paperSize.value === 'a4' || paperSize.value === 'A4')
+                    {
+                        document.orderDetailsEntryForm.selectedPageSizeInWidth.value = 21;
+                        document.orderDetailsEntryForm.selectedPageSizeInHeight.value = 29.7;
+                    }
+                    else if(paperSize.value === 'a5' || paperSize.value === 'A5')
+                    {
+                        document.orderDetailsEntryForm.selectedPageSizeInWidth.value = 14.85;
+                        document.orderDetailsEntryForm.selectedPageSizeInHeight.value = 21;
+                    }
+                } 
+            }
+
+            orderPageCenterAlertPopup.style.display = '';
+
+        }
+
+        window.addEventListener('resize', function() {
+            location.reload();
+        });
+
+    </script>
+</body>
+
+</html>
