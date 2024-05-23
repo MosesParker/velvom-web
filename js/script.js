@@ -20,8 +20,15 @@
         /**--- Main Hero Section Background size will reduce when scrolling. - SCRIPT START--- */
         const bg = document.getElementById('home-bg-image');
         window.addEventListener('scroll', function () {
+            var uiWidth = $(window).width();
             bg.style.transition = '0.2s ease-out';
-            bg.style.backgroundSize = 140 - +window.pageYOffset / 13 + '%';
+           
+            if(uiWidth > 1024)
+            {
+                bg.style.backgroundSize = 100 - +window.pageYOffset / 13 + '%';
+            }
+
+           
 
             bg.style.opacity = 1 - +window.pageYOffset / 700 + '';
         });
@@ -91,29 +98,33 @@
                     if (flag == 0) {
                         // Calculate the desired top value based on the UI width
                         var uiWidth = $(window).width();
-                        var topValue = uiWidth <= 768 ? '60%' : '60%';
+                        var topValue = uiWidth <= 768 ? '50%' : '50%';
             
                         $(this).siblings('.social-link-for-mobile-tab-link1').animate({
                             top: topValue
                         }, 200);
             
                         $(this).siblings('.social-link-for-mobile-tab-link2').delay(200).animate({
-                            top: topValue === '60%' ? '70%' : '70%' // Adjust the second element's top value accordingly
+                            top: topValue === '50%' ? '60%' : '60%' // Adjust the second element's top value accordingly
                         }, 200);
             
                         $(this).siblings('.social-link-for-mobile-tab-link3').delay(300).animate({
-                            top: topValue === '60%' ? '80%' : '80%' // Adjust the third element's top value accordingly
+                            top: topValue === '50%' ? '70%' : '70%' // Adjust the third element's top value accordingly
+                        }, 200);
+
+                        $(this).siblings('.social-link-for-mobile-tab-link4').delay(400).animate({
+                            top: topValue === '50%' ? '80%' : '80%' // Adjust the fourth element's top value accordingly
                         }, 200);
             
-                        $('.social-link-for-mobile-tab-link1 i,.social-link-for-mobile-tab-link2 i, .social-link-for-mobile-tab-link3 i').delay(500).fadeIn(200);
+                        $('.social-link-for-mobile-tab-link1 i,.social-link-for-mobile-tab-link2 i, .social-link-for-mobile-tab-link3 i, .social-link-for-mobile-tab-link4 i').delay(500).fadeIn(200);
                         flag = 1;
                     } else {
                         // Reset the top values to their default
-                        $('.social-link-for-mobile-tab-link1, .social-link-for-mobile-tab-link2, .social-link-for-mobile-tab-link3').animate({
+                        $('.social-link-for-mobile-tab-link1, .social-link-for-mobile-tab-link2, .social-link-for-mobile-tab-link3, .social-link-for-mobile-tab-link4').animate({
                             top: '91%'
                         }, 200);
             
-                        $('.social-link-for-mobile-tab-link1 i,.social-link-for-mobile-tab-link2 i, .social-link-for-mobile-tab-link3 i').delay(500).fadeOut(200);
+                        $('.social-link-for-mobile-tab-link1 i,.social-link-for-mobile-tab-link2 i, .social-link-for-mobile-tab-link3 i, .social-link-for-mobile-tab-link4 i').delay(500).fadeOut(200);
                         flag = 0;
                     }
                 });

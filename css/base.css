@@ -12,19 +12,17 @@ body {
 	margin: 0;
 	--color-text: #dc6e25;
 	--color-bg: #efded3;
-	--color-link: #A6B1E1;
-	--color-link-hover: #424874;
+	--color-link: #659B91;
+	--color-link-hover: #007560;
 	--aspect-ratio: 1.2;
 	--imgwidthmax: 40%;
 	/* Adjust image width here */
 	--size-title: 10rem;
 	--font-weight-title: 400;
-	font-family: turquoise, serif;
 	font-size: 1.5rem;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	scroll-behavior: smooth;
-	font-family: ivymode, sans-serif;
 }
 
 .page {
@@ -44,8 +42,8 @@ body {
 	font-weight: bolder;
 	padding-left: 30px;
 	font-size: 5rem;
-	font-family: ivymode, 'Times New Roman', Times, serif;
 	text-transform: uppercase;
+	font-family: ivymode, 'Times New Roman', Times, serif;
 }
 
 
@@ -54,7 +52,7 @@ body {
 	margin: 25vh 0 30vh;
 }
 
-.home-page-section3 .content a {
+.home-page-section4 .content a {
 	text-decoration: none;
 }
 
@@ -83,6 +81,7 @@ body {
 	margin-left: 5%;
 	margin-right: 5%;
 	cursor: pointer;
+	font-family: ivymode, 'Times New Roman', Times, serif;
 
 }
 
@@ -182,7 +181,6 @@ body {
 	margin: calc(var(--size-title) * -1/2) 0 0 0;
 	align-self: start;
 	line-height: 1;
-	font-family: var(--font-title);
 	font-weight: var(--font-weight-title);
 	color: var(--color-title);
 	will-change: transform;
@@ -225,10 +223,6 @@ body {
   {
 	color: var(--color-link-hover);
 	transition: all 0.1s ease-in-out;
-	padding-left: 10px;
-	padding-right: 10px;
-	border: 1px solid var(--color-link-hover);
-	border-radius: 20px;
   }
   .content__item--wide:hover .content__item-title {
 	color: var(--color-link-hover);

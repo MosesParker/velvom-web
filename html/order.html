@@ -27,6 +27,7 @@
 
     <!-- CSS for styling -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/site_links_buttons.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/order.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -55,9 +56,9 @@
             <div class="fullmenu-content">
                 <ul class="page-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="category.html">Category</a></li>
+                    <li><a href="category-types.html">Category</a></li>
                     <li><a class="active" href="order.html">Order</a></li>
-                    <li><a href="full-painting.html">Paintings</a></li>
+                    <li><a href="view-all-arts.html">Paintings</a></li>
                     <li><a href="event.html">Event</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -104,7 +105,7 @@
 
                     <form name="orderDetailsEntryForm" method="POST">
                         <div class="details-entry details-entry-step1" id="order-page-subsection-details-entry1">
-                            <p>Width (cm) :</p>  <input type="text" name="paintingName" placeholder="Name of this painting (*) eg. My world, Soulmate, etc..." required>
+                            <input type="text" name="paintingName" placeholder="Name of this painting (*) eg. My world, Soulmate, etc..." required>
                             <textarea name="paintingDescription"   placeholder="Your Lovely Description (How much it's special to you ?)"></textarea>
                             <select name="paintingType">
                                 <option value="0">--- SELECT PAINTING TYPE * ---</option>
@@ -140,7 +141,21 @@
                             </div>
                             <hr />
                             <div class="provide-width-height-section">
+                                <h2>Additional Details :</h2>
                                 <div class="column">
+                                    <p class="additional-filters-in-step2" onclick="setExtraToTheArt(0)">A3 Size</p>
+                                </div>
+                                <div class="column">
+                                    <p class="additional-filters-in-step2" onclick="setExtraToTheArt(1)">A4 Size</p>
+                                </div>
+                                <div class="column">
+                                    <p class="additional-filters-in-step2" onclick="setExtraToTheArt(2)">With Frame</p>
+                                </div>
+                                <div class="column">
+                                    <p class="additional-filters-in-step2" onclick="setExtraToTheArt(3)">Add Background</p>
+                                </div>
+
+                                <!-- <div class="column">
                                     <p> <i class="fa fa-info-circle" onclick="openSampleSizeInfoPopup()" title="Please click to view some of the sample page size details"></i></p>
                                 </div>
                                 <div class="column">
@@ -148,7 +163,19 @@
                                 </div>
                                 <div class="column">
                                     <p>Height (cm) :</p> <input type="number" name="selectedPageSizeInHeight" placeholder="0" title="Please provide the size in cm. Incase doubt, click the info. icon">
-                                </div>
+                                </div> -->
+                                <!-- <div class="column" style="width: 100%;">
+                                   <div class="file-size-section">
+                                        <p><input type="radio" name="fileSize" title="A3 File Size"> A3 </p>
+                                        <p><input type="radio" name="fileSize" title="A3 File Size"> A4 </p>
+                                   </div>
+                                   <div class="file-size-section">
+                                        <p><input type="checkbox" name="addFrameInFile" title="A3 File Size"> With Frame </p>
+                                    </div>
+                                    <div class="file-size-section">
+                                        <p><input type="checkbox" name="addBackgroundInFile" title="A3 File Size"> Add Background </p>
+                                    </div>
+                                </div> -->
                                 
                             </div>
                             <hr />
@@ -261,10 +288,36 @@
 
 
 
-    //    goToNextToEnterArtDetails1();
-    //    document.orderDetailsEntryForm.paintingName.value = "moses";
-    //    document.orderDetailsEntryForm.paintingType.value = "1";
-    //    goToNextEntryDetailSection();
+       goToNextToEnterArtDetails1();
+       document.orderDetailsEntryForm.paintingName.value = "moses";
+       document.orderDetailsEntryForm.paintingType.value = "1";
+        goToNextEntryDetailSection();
+
+        function setExtraToTheArt(selectedFilter)
+        {
+            if(selectedFilter == 0) // if select A3
+            {
+                document.getElementsByClassName('additional-filters-in-step2')[0].classList.add('active');
+                document.getElementsByClassName('additional-filters-in-step2')[1].classList.remove('active');
+            }
+            else if(selectedFilter == 1) // if select A4
+            {
+                document.getElementsByClassName('additional-filters-in-step2')[1].classList.add('active');
+                document.getElementsByClassName('additional-filters-in-step2')[0].classList.remove('active');
+            }
+            else
+            {
+                if(document.getElementsByClassName('additional-filters-in-step2')[selectedFilter].classList.contains('active'))
+                {
+                    document.getElementsByClassName('additional-filters-in-step2')[selectedFilter].classList.remove('active');
+                }
+                else
+                {
+                    document.getElementsByClassName('additional-filters-in-step2')[selectedFilter].classList.add('active');
+                }
+            }
+
+        }
 
         function setSubPaintingType(paintingTypeValue) {
             for (let i = 0; i < document.getElementsByClassName('sub-painting-types-in-step2').length; i++) {
@@ -352,6 +405,7 @@
                 else if (currentActiveStep == 2) {
                   
                     const isSubPaintingTypeSelected = document.querySelector('.sub-painting-types-in-step2.active');
+                    let paintingType = document.orderDetailsEntryForm.paintingType.value;
 
                     if(!isSubPaintingTypeSelected)
                     {
@@ -361,6 +415,20 @@
                     }
                     else
                     {
+                        if(paintingType != "5")
+                        {
+                            let isA3SheetSizeSelected = document.getElementsByClassName('additional-filters-in-step2')[0].classList.contains('active');
+                            let isA4SheetSizeSelected = document.getElementsByClassName('additional-filters-in-step2')[1].classList.contains('active');
+
+                            if(!(isA3SheetSizeSelected || isA4SheetSizeSelected))
+                            {
+                                orderPageCenterAlertPopup.style.display = 'flex';
+                                orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
+                                orderPageCenterAlertPopupContentText.innerHTML = 'Please Select at least one File Size Format';
+                                return false;
+                            }
+                        }
+
                         orderPageSubSectionDetailEntry2.style.animation = 'moving_subsection_detail_entry_center_to_left 2s forwards';
                         orderPageUploadedFileDetailsEntryHeading.style.opacity = 0;
                         setTimeout(() => {
@@ -396,6 +464,10 @@
             orderPageUploadedImageView.src = '../images/icons/file-upload.png';
             orderPageUploadedImageView.style.animation = '';
             orderPageUploadedImageView.style.width = '';
+            orderPageUploadedImageView.style.height = '';
+            orderPageUploadedImageView.style.objectFit = '';
+            orderPageUploadedImageView.style.maxWidth = '';
+            orderPageUploadedImageView.style.maxHeight = '';
             orderPageUploadedImageView.style.boxShadow = '';
             orderPageFileUploadResetNextButtons.style.display = '';
             orderPageMainSectionHeadline.innerHTML = 'Please upload the delightful image';
@@ -548,10 +620,13 @@
                     reader.onload = function (e) {
                         orderPageUploadedImageView.src = e.target.result;
 
-                        var orderPageUploadedImageViewWidth = uiWidth >= 1048 ? '35%' : uiWidth >= 768 ? '50%' : '65%';
+                        var orderPageUploadedImageViewSize = uiWidth >= 1048 ? '500px' : uiWidth >= 768 ? '60%' : '50%';
 
                         orderPageUploadedImageView.style.animation = 'none';
-                        orderPageUploadedImageView.style.width = orderPageUploadedImageViewWidth;
+                        orderPageUploadedImageView.style.width = '100%';
+                        orderPageUploadedImageView.style.height = '100%';
+                        orderPageUploadedImageView.style.maxWidth = orderPageUploadedImageViewSize;
+                        orderPageUploadedImageView.style.maxHeight = orderPageUploadedImageViewSize;
                         orderPageUploadedImageView.style.boxShadow = '5px 10px 10px 5px rgb(218, 211, 211)';
 
                     };

@@ -34,90 +34,126 @@
     <link rel="stylesheet" href="../css/font/collier-font.css">
 
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Zeyada');
 
-body {
-    height: 100vh;
-    margin: 0;
-    background: url(../images/PaintingEntryRoom1.png) no-repeat, linear-gradient(#454438, #191713);
-    background-size: cover;
-    background-position: center center;
-}
+        @import url('https://fonts.googleapis.com/css2?family=Zeyada');
+    
+        body {
+            height: 100vh;
+            margin: 0;
+            background: url('../images/paintingEntryRoom_1.png') no-repeat;
+            background-size: cover;
+        }
+    
+        .painting-name {
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%, -50%);
+            font-family: 'Zeyada';
+            font-size: 6vw;
+            color: #A57235;
+            transition: all 0.5s ease-in;
+            text-align: center;
+        }
+    
+        .painting-name:hover {
+            color: #FFE9B2;
+            text-shadow: 2px 2px #A57235;
+            transition: all 0.5s ease-in;
+            font-size: 7vw;
+        }
+    
+        .next-painting-button {
+            position: absolute;
+            left: 50%;
+            top: 80%;
+            transform: translate(-50%, -50%);
+            font-family: 'Zeyada';
+            color: #000;
+            background: #FFE9B2;
+            border: 2px solid #A57235;
+            padding: 1vw;
+            font-size: 3vw;
+            border-radius: 50%;
+            animation: floatingPaintingName 1s alternate-reverse infinite;
+            
+            box-shadow: 0px 0px 20px 5px #FFE9B2;
+        }
+    
+        .next-painting-button:hover {
+            background: #A57235;
+            color: #FFE9B2;
+            transition: all 0.5s ease-in;
+            animation: none;
+        }
+    
+        @keyframes floatingPaintingName {
+            from { margin-top: -30px; }
+            to { margin-top: 0px; }
+        }
 
-.painting-container {
-    display: flex;
-    height: 52%;
-    width: 92%;
-    margin-left: auto;
-    margin-right: auto;
-    background: wheat;
-    opacity: 0.4;
-    padding: 20px; /* Adjust padding as needed */
-    box-sizing: border-box;
-    position: absolute;
-    top: 39%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+        /* @media ((min-width: 549px) and (max-width: 1800px)) {
+        body 
+        {
+            background-size: contain;
+            background-color: #655A4E;
+            background-position: center center;
+        }
+        } */
 
-.caricature-art {
-    height: 50px;
-    width: 50px;
-    border: 1px solid red;
-    background-color: rgb(255, 0, 0, 0.5);
-    margin-right: 10px; /* Adjust margin as needed */
-}
-
-.caricature-art:last-child {
-    margin-right: 0; /* Remove margin from the last child */
-}
-
- @media (max-width: 1400px) {
-    body {
-        background-size: contain;
-        background-position: center center;
-    }
-} 
-@media (min-device-width: 700px) and (orientation: landscape) {
-    .painting-container {
-        max-width: 80%;
-    }
-}
-@media (min-device-width: 800px) and (orientation: landscape) {
-    .painting-container {
-        height: 54%;
-        max-width: 75%;
-    }
-}
-@media (min-device-width: 900px) and (orientation: landscape) {
-    .painting-container {
-        height: 57%;
-        max-width: 74%;
-    }
-}
-@media (min-device-width: 1000px) and (orientation: landscape) {
-    .painting-container {
-        height: 60%;
-        max-width: 92%;
-        margin-top: -10px;
-    }
-}
-@media (min-device-width: 700px) and (min-device-height: 500px) {
-    .painting-container {
+        @media ((max-width: 1800px)) {
+        body 
+        {
+            background: url('https://images.pexels.com/photos/4588835/pexels-photo-4588835.jpeg') no-repeat;
+            background-size: cover;
+            background-color: #655A4E;
+            background-position: center center;
+        }
+        .painting-name {
+            color: #FFE9B2;
+            text-shadow: 2px 2px #A57235;
+            transition: all 0.5s ease-in;
+            font-size: 10vw;
+        }
+        .painting-name:hover {
+            color: #FFE9B2;
+            text-shadow: 2px 2px #A57235;
+            transition: all 0.5s ease-in;
+            font-size: 10vw;
+        }
+        .next-painting-button {
+            padding: 4vw;
+            font-size: 6vw;
+        }
         
-        max-width: 92%;
-    }
-}
-@media (max-device-height: 325px)
-{
-    .painting-container {
-        
-        max-width: 70%;
-    }
-}
+        }
 
-
-
+        @media (max-device-width: 1800px) and (orientation: landscape) {
+        body 
+        {
+            background: url('../images/paintingEntryRoom_1.png') no-repeat;
+            background-size: contain;
+            background-color: #655A4E;
+            background-position: center center;
+        }
+        .painting-name {
+            color: #FFE9B2;
+            text-shadow: 2px 2px #A57235;
+            transition: all 0.5s ease-in;
+            font-size: 7.5vw;
+        }
+        .painting-name:hover {
+            color: #FFE9B2;
+            text-shadow: 2px 2px #A57235;
+            transition: all 0.5s ease-in;
+            font-size: 7.5vw;
+        }
+        .next-painting-button {
+            padding: 3vw;
+            font-size: 5vw;
+        }
+        }
+    
     </style>
     
     
@@ -126,7 +162,7 @@ body {
 <body id="body">
     <header>
         <div data-aos="fade-left" data-aos-duration="2000" class="title-icon"><img
-                src="../images/velvom_icon.png"></div>
+                src="../images/velvom_icon_color.jpg"></div>
         <div data-aos="fade-right" data-aos-duration="2000" class="menu-section">
             <p class="menuletter" style="color: aliceblue;">MENU</p>
             <div class="menu-icon nav-icon">
@@ -142,9 +178,9 @@ body {
             <div class="fullmenu-content">
                 <ul class="page-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a class="active" href="category.html">Category</a></li>
+                    <li><a class="active" href="category-types.html">Category</a></li>
                     <li><a href="order.html">Order</a></li>
-                    <li><a href="full-painting.html">Paintings</a></li>
+                    <li><a href="view-all-arts.html">Paintings</a></li>
                     <li><a href="event.html">Event</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -183,14 +219,10 @@ body {
         </div>
     </div>
 
-    <div class="painting-container">
-        <div class="caricature-art"></div>
-        <div class="caricature-art"></div>
-        <div class="caricature-art"></div>
-        <div class="caricature-art"></div>
-        <div class="caricature-art"></div>
-    </div>
-   
+    
+    <div class="painting-name">Caricature <br> Paintings</div>
+    <div class="next-painting-button" onclick="goToNextPage()">Go Inside</div>
+
     <script src="../js/jquery.min.js"></script>
     <script src="../js/jquery.ripples.js"></script>
 
@@ -200,6 +232,14 @@ body {
     <script src="../js/horizontal-scroll.js"></script>
     <script>
         AOS.init();
+
+        function goToNextPage()
+        {
+            document.getElementById('body').style.backgroundPosition='50% 0%';
+            document.getElementById('body').style.backgroundSize='110%';
+
+            window.location.href="paintings2.html";
+        }
 
     </script>
 </body>

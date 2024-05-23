@@ -4,7 +4,7 @@
         --icon_bg_color: none;
     /* rgba(255, 255, 255, 0.5)*/
     --menu-bar-bg-color-span:#000;
-    --menu-bar-bg-color:#273043;
+    --menu-bar-bg-color:#8daff8;
 }
 li {
     list-style: none;
@@ -189,7 +189,7 @@ li a:hover
     height: 100%;
     /* our sprite is composed of 25 frames */
     width: 2500%;
-    background: url('../images/ink.png') no-repeat 0 0;
+    background: url('../images/ink_blue.png') no-repeat 0 0;
     background-size: 100% 100%;
 }
 
