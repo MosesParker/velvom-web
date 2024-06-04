@@ -71,6 +71,7 @@
     </div>
     <center>
         <div class="order-page-main-section" id="order-page-main-section">
+            <input type="hidden" name="dummy_image_url" id="dummy_image_url" value="">
             <div class="order-page-file-upload-section" id="order-page-file-upload-section">
                 <h3 id="order-page-main-section-headline">Please upload the delightful image</h3>
                 <label for="order-page-upload-file-image" id="order-page-file-upload-section-label">
@@ -116,67 +117,61 @@
                                 <option value="5">Leaf Craving</option>
                                 <option value="6">Pencil Portrait</option>
                             </select>
-                            <h6>( <span>*</span> ) considered as mandatory.</h6>
                             <hr />
                         </div>
                         <div class="details-entry details-entry-step2" id="order-page-subsection-details-entry2">
+                            <input type="hidden" name="selectedPaintingAdditionalValues" id="selectedPaintingAdditionalValues" value="">
+                    		
                             <div class="sub-painting-types-section">
-                                <h2>Choose The Type :</h2>
                                 <div class="column">
-                                    <p class="sub-painting-types-in-step2" onclick="setSubPaintingType(0)">Digital
-                                        Caricature - Full-Body</p>
-                                </div>
-                                <div class="column">
-                                    <p class="sub-painting-types-in-step2" onclick="setSubPaintingType(1)">Color
-                                        Caricature - Full-Body</p>
-                                </div>
-                                <div class="column">
-                                    <p class="sub-painting-types-in-step2" onclick="setSubPaintingType(2)">B &amp; W
-                                        Caricature - Full-Body</p>
-                                </div>
-                                <div class="column">
-                                    <p class="sub-painting-types-in-step2" onclick="setSubPaintingType(3)">B &amp; W
-                                        Caricature - Only Face</p>
+                                    <select>
+                                        <option value="0" >--- SELECT THE CARICATURE ART TYPE * ---</option>
+                                        <option value="2">Hand-Drawn | Color Caricature</option>
+                                        <option value="3">Hand-Drawn | B & W Caricature</option>
+                                        <option value="2">Digital | Color Caricature</option>
+                                        <option value="3">Digital | B & W Caricature</option>
+                                    </select>
                                 </div>
                             </div>
-                            <hr />
+                            <div class="in-depth-sub-painting-types-section">
+                                <h2>Choose The Type :</h2>
+                                <div class="column">
+                                    <p class="sub-painting-types-in-step2" onclick="setSubPaintingType(0)">Full-Body 
+                                        <span class="feature-not-available-tooltip">Feature currently not available</span>
+                                    </p>
+                                </div>
+                                <div class="column">
+                                    <p class="sub-painting-types-in-step2 make-box-type-disabled" onclick="setSubPaintingType(1)">Face-Only
+                                     <span class="feature-not-available-tooltip">Feature currently not available</span></p>
+                                </div>
+                            </div>
+                            <p class="view-art-details" onclick="openSampleSizeInfoPopup()"> <i class="fa fa-info-circle" title="Please click here if you want info on this art type."></i> Click here to view more details</p>
+                            <hr style="margin-top: -15px;" />
+
                             <div class="provide-width-height-section">
                                 <h2>Additional Details :</h2>
-                                <div class="column">
-                                    <p class="additional-filters-in-step2" onclick="setExtraToTheArt(0)">A3 Size</p>
-                                </div>
-                                <div class="column">
-                                    <p class="additional-filters-in-step2" onclick="setExtraToTheArt(1)">A4 Size</p>
-                                </div>
-                                <div class="column">
-                                    <p class="additional-filters-in-step2" onclick="setExtraToTheArt(2)">With Frame</p>
-                                </div>
-                                <div class="column">
-                                    <p class="additional-filters-in-step2" onclick="setExtraToTheArt(3)">Add Background</p>
-                                </div>
-
-                                <!-- <div class="column">
-                                    <p> <i class="fa fa-info-circle" onclick="openSampleSizeInfoPopup()" title="Please click to view some of the sample page size details"></i></p>
-                                </div>
-                                <div class="column">
-                                    <p>Width (cm) :</p> <input type="number" name="selectedPageSizeInWidth" placeholder="0" title="Please provide the size in cm. Incase doubt, click the info. icon">
-                                </div>
-                                <div class="column">
-                                    <p>Height (cm) :</p> <input type="number" name="selectedPageSizeInHeight" placeholder="0" title="Please provide the size in cm. Incase doubt, click the info. icon">
-                                </div> -->
-                                <!-- <div class="column" style="width: 100%;">
-                                   <div class="file-size-section">
-                                        <p><input type="radio" name="fileSize" title="A3 File Size"> A3 </p>
-                                        <p><input type="radio" name="fileSize" title="A3 File Size"> A4 </p>
-                                   </div>
-                                   <div class="file-size-section">
-                                        <p><input type="checkbox" name="addFrameInFile" title="A3 File Size"> With Frame </p>
+                                <div class="container">
+                                    <div class="column">
+                                        <p class="additional-filters-in-step2 " onclick="setExtraToTheArt(0,'A3 Size')">A3 Size
+                                            <span class="feature-not-available-tooltip">Feature currently not available</span></p>
                                     </div>
-                                    <div class="file-size-section">
-                                        <p><input type="checkbox" name="addBackgroundInFile" title="A3 File Size"> Add Background </p>
+                                    <div class="column">
+                                        <p class="additional-filters-in-step2" onclick="setExtraToTheArt(1,'A4 Size')">A4 Size
+                                            <span class="feature-not-available-tooltip">Feature currently not available</span></p>
                                     </div>
-                                </div> -->
-                                
+                                    <div class="column">
+                                        <p class="additional-filters-in-step2 make-box-type-disabled" onclick="setExtraToTheArt(2,'4x7 Inch')">4x7 Inch
+                                            <span class="feature-not-available-tooltip">Feature currently not available</span></p>
+                                    </div>
+                                    <div class="column">
+                                        <p class="additional-filters-in-step2" onclick="setExtraToTheArt(3,'With Frame')">With Frame
+                                            <span class="feature-not-available-tooltip">Feature currently not available</span></p>
+                                    </div>
+                                    <div class="column">
+                                        <p class="additional-filters-in-step2" onclick="setExtraToTheArt(4,'Add Background')">Add Background
+                                            <span class="feature-not-available-tooltip">Feature currently not available</span></p>
+                                    </div>
+                                </div>
                             </div>
                             <hr />
                         </div>
@@ -196,13 +191,11 @@
                                  title="Kindly provide your final expected date."
                                  required>
                              </div>
-                             
-                             
                             </div>
-                            <h6>( <span>*</span> ) considered as mandatory.</h6>
                             <hr />
                         </div>
                     </form>
+                    <h6 class="sample-h6-mandatory">( <span>*</span> ) considered as mandatory.</h6>
                     <div class="button-container">
                         <button onclick="goToBackEntryDetailSection()">BACK</button>
                         <button onclick="goToNextEntryDetailSection()">NEXT</button>
@@ -291,31 +284,53 @@
        goToNextToEnterArtDetails1();
        document.orderDetailsEntryForm.paintingName.value = "moses";
        document.orderDetailsEntryForm.paintingType.value = "1";
-        goToNextEntryDetailSection();
+       goToNextEntryDetailSection();
+       
+       document.getElementsByClassName('sub-painting-types-in-step2')[1].getElementsByTagName('span')[0].style.display='block';
+       document.getElementsByClassName('additional-filters-in-step2')[2].getElementsByTagName('span')[0].style.display='block';
 
-        function setExtraToTheArt(selectedFilter)
+        function setExtraToTheArt(selectedFilter, selectedAdditionalDetails)
         {
+            let currentAdditionalDetails = document.orderDetailsEntryForm.selectedPaintingAdditionalValues.value; // at loading time, the value will be empty string
+            
+            if(currentAdditionalDetails.includes(selectedAdditionalDetails))
+            {
+                currentAdditionalDetails = currentAdditionalDetails.split(',').filter(detail => detail.trim() !== selectedAdditionalDetails).join(',');
+            }
+            else
+            {
+                if(currentAdditionalDetails.length == 0)
+                {
+                    currentAdditionalDetails = selectedAdditionalDetails;
+                }
+                else
+                {
+                    currentAdditionalDetails = currentAdditionalDetails +","+selectedAdditionalDetails;
+                }
+            }
+
             if(selectedFilter == 0) // if select A3
             {
                 document.getElementsByClassName('additional-filters-in-step2')[0].classList.add('active');
                 document.getElementsByClassName('additional-filters-in-step2')[1].classList.remove('active');
+
+                currentAdditionalDetails = currentAdditionalDetails.split(',').filter(
+                    detail => detail.trim() !== document.getElementsByClassName('additional-filters-in-step2')[1].textContent).join(',');                
             }
             else if(selectedFilter == 1) // if select A4
             {
                 document.getElementsByClassName('additional-filters-in-step2')[1].classList.add('active');
                 document.getElementsByClassName('additional-filters-in-step2')[0].classList.remove('active');
+
+                currentAdditionalDetails = currentAdditionalDetails.split(',').filter(
+                    detail => detail.trim() !== document.getElementsByClassName('additional-filters-in-step2')[0].textContent).join(',');       
             }
             else
             {
-                if(document.getElementsByClassName('additional-filters-in-step2')[selectedFilter].classList.contains('active'))
-                {
-                    document.getElementsByClassName('additional-filters-in-step2')[selectedFilter].classList.remove('active');
-                }
-                else
-                {
-                    document.getElementsByClassName('additional-filters-in-step2')[selectedFilter].classList.add('active');
-                }
+                document.getElementsByClassName('additional-filters-in-step2')[selectedFilter].classList.toggle('active');
             }
+            
+            document.orderDetailsEntryForm.selectedPaintingAdditionalValues.value = currentAdditionalDetails;
 
         }
 
@@ -349,12 +364,24 @@
         }
 
         function openSampleSizeInfoPopup() {
+
+            let artTypeTitle = 'Caricature';
+            let artTypeDescription = 'A picture or description of somebody that makes his/her appearance or behaviour funnier and more extreme than it really is.';
+            let artTypePriceDetails = 
+                     '<li><pre style="white-space: pre-wrap;">- A3 and A4 sizes are available</pre></li>'
+                    +'<li><pre style="white-space: pre-wrap;">- For <b>Hand-drawn Color Caricature</b>, the price of face-only is Rs.350 and full-body is Rs.400</pre></li>'
+                    +'<li><pre style="white-space: pre-wrap;">- For Hand-drawn BW Caricature, the price of face-only is Rs.200 and full-body is Rs.150</pre></li>'
+                    +'<li><pre style="white-space: pre-wrap;">- For Digital Color Caricature, the price of face-only is Rs.1199 and full-body is Rs.1499</pre></li>'
+                    +'<li><pre style="white-space: pre-wrap;">- For Digital BW Caricature, the price of face-only is Rs.799 and full-body is Rs.1099</pre></li>'
+                    +'<li><pre style="white-space: pre-wrap;">- For Digital Caricature, there will be extra Rs.700 incase of frame.</pre></li>'
+                    +'<li><pre style="white-space: pre-wrap;">- For Digital Caricature, for adding extra background, it will be Rs.300</pre></li>'
+                ;
+
             let text = '<div style="text-align: left;">'
-                            +'<p>Sample Size in cm.</p><pre style="white-space: pre-wrap; text-transform:none;margin: 20px 10px;">You can also choose the respective sizes.</pre>'
-                            +'<pre style="white-space: pre-wrap;"><input type="radio" name="paperSize" value="a3"> For A3 Size : 29.7 (w) x 42  (h) </pre>'
-                            +'<pre style="white-space: pre-wrap;"><input type="radio" name="paperSize" value="a4"> For A4 Size : 21   (w) x 29.7(h) </pre>'
-                            +'<pre style="white-space: pre-wrap;"><input type="radio" name="paperSize" value="a5"> For A5 Size : 14.85(w) x 21  (h) </pre>'
-                        +' </div>';
+                            +'<p>'+artTypeTitle+'</p>'
+                            +'<pre style="white-space: pre-wrap; text-transform:none;margin: 20px 10px;">'+artTypeDescription+'</pre>'
+                            +'<ol>'+artTypePriceDetails+'</ol>'
+                            +' </div>';
                         
 
             orderPageCenterAlertPopup.style.display = 'flex';
@@ -365,6 +392,9 @@
         function goToNextEntryDetailSection() {
 
             const activeStepElement = document.querySelector('.step-number.active');
+
+            document.getElementById('dummy_image_url').value = document.getElementById('order-page-uploaded-image-view').src;
+            
 
             if (activeStepElement) {
                 const currentActiveStep = activeStepElement.textContent;
@@ -461,6 +491,7 @@
 
 
         function resetTheFileUploadImage() {
+            orderPageMainSection.style.background=  "url('../images/order-file-upload-section-img.jpg') no-repeat";
             orderPageUploadedImageView.src = '../images/icons/file-upload.png';
             orderPageUploadedImageView.style.animation = '';
             orderPageUploadedImageView.style.width = '';
@@ -479,13 +510,14 @@
 
         function goToNextToEnterArtDetails1() {
 
+            orderPageMainSection.style.background='#fff';
             orderPageMainSection.style.display = 'block';
             orderPageFileUploadSection.style.paddingTop = '30px';
             orderPageFileUploadSection.style.transition = 'all 1s ease-out';
             // orderPageFileUploadSection.style.width = (uiWidth >= 1048 ? '40%' : uiWidth >= 768 ? '100%' : '100%');
             // orderPageFileUploadSection.style.minHeight = (uiWidth >= 1048 ? '80vh' : uiWidth >= 768 ? '60vh' : '60vh');
             orderPageFileUploadSection.style.width = (uiWidth >= 1048 ? '40%' : uiWidth >= 768 ? '100%' : '100%');
-            orderPageFileUploadSection.style.minHeight = (uiWidth >= 1048 ? '80vh' : uiWidth >= 768 ? '60vh' : '60vh');
+            orderPageFileUploadSection.style.minHeight = (uiWidth >= 1048 ? '85vh' : uiWidth >= 768 ? '60vh' : '60vh');
             orderPageFileUploadSection.style.float = 'left';
 
 
@@ -505,7 +537,7 @@
            // orderPageUploadedFileDetailsEntrySection.style.minHeight = (uiWidth >= 1048 ? '80vh' : uiWidth >= 768 ?  uiWidth >= 820 ? '73vh' : '71vh' : '50vh');
 
            orderPageUploadedFileDetailsEntrySection.style.minHeight = (uiHeight >= 600 && uiHeight <= 650 ? '82vh' : uiHeight >= 651 && uiHeight <= 710 ? '81vh' :
-           (uiWidth >= 1048 ? '80vh' : uiWidth >= 768 ?  uiWidth >= 820 ? '60vh' : '70vh' : '50vh'));
+           (uiWidth >= 1048 ? '85vh' : uiWidth >= 768 ?  uiWidth >= 820 ? '60vh' : '70vh' : '50vh'));
             // orderPageUploadedFileDetailsEntrySection.style.minHeight = ((uiWidth >= 1048 ? (uiHeight >= 600 && uiHeight <= 650 ? '82vh' : uiHeight >= 651 && 
             // uiHeight <= 710 ? '81vh' : '80vh') : uiWidth >= 768 ?  uiWidth >= 820 ? '73vh' : '71vh' : '50vh'));
 
@@ -638,6 +670,7 @@
                     orderPageUploadFileImage.disabled = true;
                     orderPageFileUploadSectionLabel.style.cursor = 'auto';
                     orderPageFileUploadSectionLabel.style.background = '#D4C7AF';
+
                 }
             }
         }

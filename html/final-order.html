@@ -27,6 +27,7 @@
 
     <!-- CSS for styling -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/site_links_buttons.css">
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/order.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -98,7 +99,7 @@
         </div>
     </div>
 
-    <form name="finalOrderForm">
+    <form name="finalOrderForm" method="POST">
         <center>
 
             <div class="row justify-content-center">
@@ -106,85 +107,86 @@
                     <div class="wrapper ">
                         <div class="row no-gutters final-order-section">
                             <div class="col-lg-8 col-md-7 d-flex align-items-stretch left-side-details">
-                                <form method="POST" id="contactForm" name="contactForm" class="contactForm">
                                     <div class="row user-input-details">
                                         <div class="col-md-12 headings">
                                             Delivery Information :
                                         </div>
                                         <div class="col-md-12">
-                                            <div class="form-group input-field" data-aos="fade-down" data-aos-duration="2000">
-                                                <input type="text" name="userPersonalName" 
+                                            <div class="form-group input-field">
+                                                <input type="text" name="userPersonalName"
                                                     placeholder="Provide your name (*)" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-group input-field" data-aos="fade-right" data-aos-duration="2000">
-                                                <input type="number" name="userPhoneNumber" 
-                                                    placeholder="Mobile Number (*)" required>
+                                            <div class="form-group input-field">
+                                                <input type="number" name="userPhoneNumber"
+                                                    placeholder="Mobile Number (*)" pattern="/^-?\d+\.?\d*$/"
+                                                    onKeyPress="if(this.value.length==10) return false;"
+                                                    required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-group input-field" data-aos="fade-left" data-aos-duration="2000">
-                                                <input type="email" name="userEmailAddress" 
+                                            <div class="form-group input-field">
+                                                <input type="email" name="userEmailAddress"
                                                     placeholder="Email Address (*)" required>
                                             </div>
                                         </div>
-                                        <div class="col-md-12" data-aos="fade-up" data-aos-duration="2000">
+                                        <div class="col-md-12">
                                             <div class="form-group input-field">
                                                 <label class="label" for="subject">Address</label>
-                                                <textarea name="userAddress" 
+                                                <textarea name="userAddress"
                                                     placeholder="Enter your Delivery Address"></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="form-group radio-column">
-                                                <div class="col-md-6" data-aos="fade-down" data-aos-duration="2000">
-                                                    <div class="form-group">
-                                                        <div class="column">
-                                                            <input type="radio" name="orderPaymentMethod" value="1">
-                                                            Online Payment
-                                                            <i class="fa fa-info-circle"
-                                                                onclick="openSampleSizeInfoPopup()"
-                                                                title="Please click to view some of the sample page size details"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6" data-aos="fade-down" data-aos-duration="2000">
-                                                    <div class="form-group">
-                                                        <div class="column">
-                                                            <input type="radio" name="orderPaymentMethod" value="2">
-                                                            Payment after discussion
-                                                            <i class="fa fa-info-circle"
-                                                                onclick="openSampleSizeInfoPopup()"
-                                                                title="Please click to view some of the sample page size details"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group input-field">
+                                                <select name="userSelectedState">
+                                                    <option value="0">--- Select State ---</option>
+                                                    <option value="1">Tamil Nadu</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
-                                            <div class="button-column">
-                                                <div class="button-container">
-                                                    <button onclick="goToBackEntryDetailSection()">BACK</button>
-                                                    <button onclick="goToProceedSection()">PROCEED</button>
-                                                </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group input-field">
+                                                <select name="userSelectedDistrict">
+                                                    <option value="0">--- Select District ---</option>
+                                                    <option value="1">Chennai</option>
+                                                    <option value="1">Vellore</option>
+                                                    <option value="1">Madurai</option>
+                                                </select>
                                             </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group input-field">
+                                                <input type="number" name="userSelectedPinCode"
+                                                    placeholder="Enter Pincode"  pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==6) return false;" >
+                                            </div>
+                                        </div>
+                                        <div class="col-12" onclick="openSampleSizeInfoPopup()">
+                                            <h6>* Fill out the form and we’ll contact you with the details and payment info. Let's make something amazing together! <i class="fa fa-handshake-o" aria-hidden="true"></i> </h6>
+                                        </div>
+                                        
+                                        <div class="col-12">
+                                            <h6> </h6>
+                                        </div>
+                                        <div class="button-container">
+                                            <button onclick="goToClearSection()">CLEAR</button>
+                                            <button onclick="goToProceedSection()">PROCEED</button>
                                         </div>
                                     </div>
-                                </form>
                             </div>
                             <div class="col-lg-4 col-md-5 d-flex align-items-stretch right-side-details">
                                 <div class="contact-wrap w-100 p-md-5 p-4">
-                                    <div class="info-wrap w-100 p-md-5 p-4">
+                                    <div class="info-wrap w-100">
                                         <div class="dbox w-100 uploaded-image-details">
                                             <p class="painting-name" data-aos="fade-down" data-aos-duration="2000">Unknown People</p>
-                                            <p class="painting-type" data-aos="fade-up" data-aos-duration="2000">(Digital Painting)</p>
+                                            <p class="painting-type" data-aos="fade-up" data-aos-duration="2000">Hand-Drawn | Color Caricature</p>
                                         </div>
                                         <div class="dbox uploaded-image">
                                             <img src="../images/home-section2-slider3.jpg">
                                         </div>
                                         <div class="dbox uploaded-image-amount" >
-                                            <p> Rs. 1500 /-</p>
+                                            <p> Face-Only</p>
                                          </div>
                                     </div>
 
@@ -238,23 +240,48 @@
         }
 
         function closeAlertPopup() {
+            event.preventDefault();
             orderPageCenterAlertPopup.style.display = '';
         }
 
-        function goToProceedSection() {
-            let orderPaymentType = document.finalOrderForm.orderPaymentMethod.value;
-
-            if (orderPaymentType == 2) {
-                let text = '<div style="text-align: center;">'
-                    + '<pre style="white-space: pre-wrap;">As your submitting the 2nd option. Please verify your phone/ email correctly. </pre>'
-                    + ' </div>';
-
-
-                orderPageCenterAlertPopup.style.display = 'flex';
-                orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
-                orderPageCenterAlertPopupContentText.innerHTML = text;
-            }
+        function goToClearSection()
+        {
+            event.preventDefault();
+            document.finalOrderForm.userPersonalName.value = "";
+			document.finalOrderForm.userPhoneNumber.value = "";
+			document.finalOrderForm.userEmailAddress.value = "";
+			document.finalOrderForm.userAddress.value = "";
+			document.finalOrderForm.userSelectedState.value = "0";
+			document.finalOrderForm.userSelectedDistrict.value = "0";
+			document.finalOrderForm.userSelectedPinCode.value = "";
         }
+        function goToProceedSection() {
+
+            let userPersonalName = document.finalOrderForm.userPersonalName.value;
+
+            event.preventDefault();
+
+            if(userPersonalName == null || userPersonalName.length == 0)
+			{
+				popupAlertMessageForDeliveryDetailsPage();
+				orderPageCenterAlertPopupContentText.innerHTML = 'Please provide your name';
+                return false;
+			}
+            orderPageCenterAlertPopup.getElementsByClassName('popup-content')[0].getElementsByTagName('button')[0].style.display = 'none';
+			orderPageCenterAlertPopup.style.display = 'flex';
+			orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
+			orderPageCenterAlertPopupContentText.innerHTML = 'Thanks for sharing your details! Please hold on while we prepare everything...';
+			
+            setTimeout(closeAlertPopup, 2000);
+        }
+        
+
+        function popupAlertMessageForDeliveryDetailsPage()
+        {
+           
+			orderPageCenterAlertPopup.style.display = 'flex';
+			orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
+		}
 
     </script>
 
