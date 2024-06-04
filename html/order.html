@@ -281,10 +281,10 @@
 
 
 
-       goToNextToEnterArtDetails1();
-       document.orderDetailsEntryForm.paintingName.value = "moses";
-       document.orderDetailsEntryForm.paintingType.value = "1";
-       goToNextEntryDetailSection();
+    //    goToNextToEnterArtDetails1();
+    //    document.orderDetailsEntryForm.paintingName.value = "moses";
+    //    document.orderDetailsEntryForm.paintingType.value = "1";
+    //    goToNextEntryDetailSection();
        
        document.getElementsByClassName('sub-painting-types-in-step2')[1].getElementsByTagName('span')[0].style.display='block';
        document.getElementsByClassName('additional-filters-in-step2')[2].getElementsByTagName('span')[0].style.display='block';
@@ -706,9 +706,17 @@
 
         }
 
-        window.addEventListener('resize', function() {
-            location.reload();
-        });
+        function debounce(func, wait) {
+    let timeout;
+    return function() {
+        clearTimeout(timeout);
+        timeout = setTimeout(func, wait);
+    };
+}
+
+window.addEventListener('resize', debounce(function() {
+    location.reload();
+}, 250));  // Adjust the wait time as needed
 
     </script>
 </body>
