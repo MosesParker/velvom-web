@@ -55,7 +55,7 @@
         <center>
             <div class="fullmenu-content">
                 <ul class="page-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="category-types.html">Category</a></li>
                     <li><a class="active" href="order.html">Order</a></li>
                     <li><a href="view-all-arts.html">Paintings</a></li>
@@ -525,11 +525,11 @@
             orderPageFileUploadSectionLabel.style.width = '90%';
             orderPageFileUploadSectionLabel.style.border = 'none';
             orderPageFileUploadSectionLabel.style.backgroundColor = 'transparent';
-            orderPageFileUploadSectionLabel.style.minHeight = (uiWidth >= 1048 ? '65vh' : uiWidth >= 768 ? '55vh' : '55vh');;
+            orderPageFileUploadSectionLabel.style.minHeight = (uiWidth >= 1048 ? '65vh' : uiWidth >= 768 ? '55vh' : '55vh');
             orderPageFileUploadSection.style.borderRadius = '0px';
 
             orderPageUploadedImageView.style.width = '80%';
-            orderPageUploadedImageView.style.height = (uiWidth >= 1048 ? '60vh' : uiWidth >= 768 ? '50vh' : '50vh');;
+            orderPageUploadedImageView.style.height = (uiWidth >= 1048 ? '60vh' : uiWidth >= 768 ? 'auto' : 'auto');
             orderPageUploadedImageView.style.objectFit = 'cover';
 
             orderPageUploadedFileDetailsEntrySection.style.transition = 'all 1s ease-out';
@@ -652,13 +652,14 @@
                     reader.onload = function (e) {
                         orderPageUploadedImageView.src = e.target.result;
 
-                        var orderPageUploadedImageViewSize = uiWidth >= 1048 ? '500px' : uiWidth >= 768 ? '60%' : '50%';
+                        var orderPageUploadedImageViewSize = uiWidth >= 1048 ? '500px' : uiWidth >= 768 ? '60%' : '80%';
+                        var orderPageUploadedImageViewSizeHeight = uiWidth >= 1048 ? '500px' : uiWidth >= 768 ? '60%' : '60%';
 
                         orderPageUploadedImageView.style.animation = 'none';
                         orderPageUploadedImageView.style.width = '100%';
                         orderPageUploadedImageView.style.height = '100%';
                         orderPageUploadedImageView.style.maxWidth = orderPageUploadedImageViewSize;
-                        orderPageUploadedImageView.style.maxHeight = orderPageUploadedImageViewSize;
+                        orderPageUploadedImageView.style.maxHeight = orderPageUploadedImageViewSizeHeight;
                         orderPageUploadedImageView.style.boxShadow = '5px 10px 10px 5px rgb(218, 211, 211)';
 
                     };

@@ -577,6 +577,17 @@
     animation-fill-mode: forwards;
     opacity: 0;
 }
+.order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section .final-due-date {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section .final-due-date input[type="date"] {
+    width: 70%;
+    margin-left: auto;
+    opacity: 0;
+}
 
 
 
@@ -1300,6 +1311,15 @@
         width: 100%;
         left: 0%;
         transform: translateX(0%);
+    }
+    .order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section {
+        margin-top: 5vh;
+    }
+    .order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section p {
+        margin-top: -10vh;
+    }
+    .order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section .final-due-date input[type="date"] {
+        width: 100%;
     }
 }
 

@@ -4,7 +4,8 @@
         --icon_bg_color: none;
     /* rgba(255, 255, 255, 0.5)*/
     --menu-bar-bg-color-span:#000;
-    --menu-bar-bg-color:#8daff8;
+    --menu-bar-text-color:#FFE8D2;
+    --menu-bar-text-color-active:#EF9C66;
 }
 li {
     list-style: none;
@@ -13,19 +14,19 @@ li {
 li a
 {
     text-decoration: none;
-    color: #7E846B;
+    color: var(--menu-bar-text-color);
     font-size: 4rem;
     font-family: collier, sans-serif;
     transition: all 0.3s ease-in-out;
 }
 li .active
 {
-    color: #8994ac;
+    color: var(--menu-bar-text-color-active);
     
 }
 li a:hover
 {
-    color: #D0DDD7;
+    color: var(--menu-bar-text-color-active);
     transition: all 0.3s ease-in-out;
 }
 .menu-section {
@@ -41,6 +42,7 @@ li a:hover
     margin: 0;
     padding: 0;
     font-size: 20px;
+    color: var(--menu-bar-bg-color-span);
 }
 
 .menu-icon {
@@ -189,7 +191,7 @@ li a:hover
     height: 100%;
     /* our sprite is composed of 25 frames */
     width: 2500%;
-    background: url('../images/ink_blue.png') no-repeat 0 0;
+    background: url('../images/ink_orange.png') no-repeat 0 0;
     background-size: 100% 100%;
 }
 

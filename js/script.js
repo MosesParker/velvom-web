@@ -37,14 +37,50 @@
 
 
 
-        function callCategoryMethod(val) {
-
-            if(val==1)
-            {
-                window.location.href = 'category.html';
-            }
-            
+        function callCategoryMethodFromCategory(paintingTypeCnt)
+    {
+        if(paintingTypeCnt == "1")
+        {
+            window.location.href="caricature.html";
         }
+        else if(paintingTypeCnt == "2")
+        {
+            window.location.href="printedposters.html";
+        }
+        else if(paintingTypeCnt == "3")
+        {
+            window.location.href="digitalpainting.html";
+        }
+        else if(paintingTypeCnt == "4")
+        {
+            window.location.href="stencil.html";
+        }
+        else if(paintingTypeCnt == "5")
+        {
+            window.location.href="leafart.html";
+        }
+        else if(paintingTypeCnt == "6")
+        {
+            window.location.href="portraits.html";
+        }
+        else if(paintingTypeCnt == "7")
+        {
+            window.location.href="bookfolding.html";
+        }
+        else if(paintingTypeCnt == "8")
+        {
+            window.location.href="event.html";
+        }
+        else if(paintingTypeCnt == "9")
+        {
+            window.location.href="magic_vr.html";
+        }
+        else if(paintingTypeCnt == "10")
+        {
+            window.location.href="keychains.html";
+        }
+        
+    }
 
 
 
