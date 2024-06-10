@@ -103,10 +103,10 @@
     --contact-us-page-button-bg-hover: #C1D7AE;
 
 
-    --event-page-bg: #E7CFCD;
+    --event-page-bg: #FFF8EC;
     --event-page-section-box-shadow: 10px 10px 10px 1px #CAB1BD;
-    --event-page-section1-bg: url('../images/event-page-main-img.jpeg');
-    --event-page-section1-color: #DD1C1A;
+    --event-page-section1-bg: url('https://www.stonedsanta.in/wp-content/uploads/2024/01/Caricature-artists-India-1080x675.png');
+    --event-page-section1-color: #FFEECB;
     --event-page-section2-color: #78737B;
     --event-page-section3-bg: #CAB1BD;
     --event-page-section3-button-bg: #B5C9C3;
@@ -1598,7 +1598,82 @@ footer {
     margin: auto;
     font-weight: bolder;
     color: var(--event-page-section1-color);
-    box-shadow: var(--event-page-section-box-shadow);
+    
+    text-shadow: 0 0 10px #AD9A7B, 0 0 10px #005B4C;
+}
+.event-us-body .event-section2_0 {
+    padding: 7rem 5vw 2rem 5vw;
+    overflow: hidden;
+    color: var(--event-page-section2-color);
+}
+.event-us-body .event-section2_0 .section-headings {
+    font-weight: bolder;
+    padding-left: 30px;
+    font-size: 3rem;
+    font-family: var(--primary-font-theme);
+    text-transform: uppercase;
+    margin-bottom: 10vh;
+    color: #005B4C;
+}
+.event-us-body .event-section2_0 .product-types
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.event-us-body .event-section2_0 .left-side
+{
+    display: flex;
+    flex-direction: column;
+}
+.event-us-body .event-section2_0 .left-side h2
+{
+    width: 100%;
+    font-size: 3rem;
+    padding-left: 10px;
+    vertical-align: middle;
+    font-family: var(--secondary-font-theme);
+    color:#4F4537;
+}
+.event-us-body .event-section2_0 .left-side h5
+{
+    margin: 50px 0px 20px 0px;
+    width: 70%;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    font-family: var(--secondary-font-theme);
+    line-height: 1.5;
+    word-spacing: 2px;
+}
+.event-us-body .event-section2_0 .right-side
+{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.event-us-body .event-section2_0 .famous_event_img_slider
+{
+    overflow: hidden;
+}
+.event-us-body .event-section2_0 .famous_event_img_slider .event_slider_section h6
+{
+    text-decoration: underline;
+}
+.event-us-body .event-section2_0 .famous_event_img_slider .event_slider_section .marquee {
+    white-space: nowrap;
+    animation: marquee_book_event_magic_vr 30s linear infinite;
+}
+
+.event-us-body .event-section2_0 .famous_event_img_slider .event_slider_section .marquee img {
+    width: 300px;
+    height: 300px;
+    margin-right: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 
+      12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+      -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
 }
 
 .event-us-body .event-section2 {
@@ -1698,14 +1773,9 @@ footer {
 }
 
 .event-us-body .event-section3 .column .explore-description .slice_button {
-    -webkit-box-pack: flex-start;
-    -ms-flex-pack: flex-start;
     justify-content: flex-start;
-    -webkit-box-align: flex-start;
-    -ms-flex-align: flex-start;
     align-items: flex-start;
     z-index: 3;
-
 }
 
 .event-us-body .event-section3 .column .explore-description .slice_button .btn-slice {
@@ -2898,6 +2968,14 @@ footer {
     .home-section5-popup-right-side .painting-description .description-row .title {
         flex: 0 0 150px; 
     }
+    .event-us-body .event-section2_0 .product-types .column
+    {
+        width: 100%;
+    }
+    .event-us-body .event-section2_0 .left-side h5
+    {
+        width: 100%;
+    }
 
 
 }
@@ -2955,7 +3033,6 @@ footer {
     .event-registration-body .event-form .right-side form .successMessage   {
      width: 100%;
     }
-
     
 }
 
@@ -3248,7 +3325,14 @@ footer {
         font-size: var(--font-size-mobile-devices-for-header-text);
         box-shadow: 5px 5px 5px 0.5px #EFF0D1;
     }
-
+    .event-us-body .event-section2_0 .product-types .column
+    {
+        width: 100%;
+    }
+    .event-us-body .event-section2_0 .left-side h5
+    {
+        width: 100%;
+    }
     .event-us-body .event-section2 .event-place .event-place-description {
         min-height: 1000px;
     }
@@ -3286,6 +3370,10 @@ footer {
     .event-us-body .event-section3 .column .explore-description h1 {
         font-size: var(--font-size-mobile-devices-for-small-text);
         width: 95%;
+    }
+    .event-us-body .event-section3 .column .explore-description .slice_button {
+        justify-content: center;
+        align-items: center;
     }
 
     .full-painting-body .painting-section1 {
