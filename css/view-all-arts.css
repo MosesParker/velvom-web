@@ -91,6 +91,10 @@ header {
 	z-index: 1;
 	font-family: var(--primary-font-theme);
 	font-size: 3rem;
+	cursor: pointer;
+}
+.header:hover {
+	color: #d1731a;
 }
 
 .container {

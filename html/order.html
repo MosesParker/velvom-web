@@ -86,6 +86,7 @@
                             onclick="goToNextToEnterArtDetails1()">NEXT</button>
                     </div>
                 </label>
+                <h6>[Max File Size : 5mb]</h6>
             </div>
             <div class="order-page-uploaded-file-details-entry-section"
                 id="order-page-uploaded-file-details-entry-section">
@@ -186,7 +187,7 @@
                                 <p>Want bit earlier ? </p><div style="display: flex;align-items: center;width: 100%;flex-wrap: wrap;">
                                  <input type="checkbox" id="needOrderEarlier" name="needOrderEarlier" value="yes" onclick="needOrderBitEarlier()" style="margin: 0;width: auto;margin: 10px;">
                                  <label for="needOrderEarlier" style="margin: 0;margin-right: 20px ;">Yes</label>
-                                 <input type="date" style="width: 70%;margin-left: auto;opacity: 0;" 
+                                 <input type="date"
                                  id="finalExpectedDateByUser" name="finalExpectedDateByUser" value="2023-10-14" 
                                  title="Kindly provide your final expected date."
                                  required>
@@ -510,7 +511,8 @@
 
         function goToNextToEnterArtDetails1() {
 
-            orderPageMainSection.style.background='#fff';
+            orderPageMainSection.style.background=(uiWidth >= 1048 ? '#fff' : uiWidth >= 768 ? '#F3D180' : '#F3D180');
+            orderPageMainSection.style.marginBottom=(uiWidth >= 1048 ? '0px' : uiWidth >= 768 ? '30px' : '50px');
             orderPageMainSection.style.display = 'block';
             orderPageFileUploadSection.style.paddingTop = '30px';
             orderPageFileUploadSection.style.transition = 'all 1s ease-out';
@@ -647,30 +649,43 @@
                     orderPageCenterAlertPopupContentText.innerHTML = 'You are providing a invalid file. Should be Image';
                 }
                 else {
-                    const reader = new FileReader();
+                    
+                    const fileSize = orderPageUploadFileImage.files.item(0).size;
+                    const fileMb = fileSize / 1024 ** 2;
 
-                    reader.onload = function (e) {
-                        orderPageUploadedImageView.src = e.target.result;
+                    if(fileMb < 5)
+                    {
+                        const reader = new FileReader();
 
-                        var orderPageUploadedImageViewSize = uiWidth >= 1048 ? '500px' : uiWidth >= 768 ? '60%' : '80%';
-                        var orderPageUploadedImageViewSizeHeight = uiWidth >= 1048 ? '500px' : uiWidth >= 768 ? '60%' : '60%';
+                        reader.onload = function (e) {
+                            orderPageUploadedImageView.src = e.target.result;
 
-                        orderPageUploadedImageView.style.animation = 'none';
-                        orderPageUploadedImageView.style.width = '100%';
-                        orderPageUploadedImageView.style.height = '100%';
-                        orderPageUploadedImageView.style.maxWidth = orderPageUploadedImageViewSize;
-                        orderPageUploadedImageView.style.maxHeight = orderPageUploadedImageViewSizeHeight;
-                        orderPageUploadedImageView.style.boxShadow = '5px 10px 10px 5px rgb(218, 211, 211)';
+                            var orderPageUploadedImageViewSize = uiWidth >= 1048 ? '500px' : uiWidth >= 768 ? '60%' : '80%';
+                            var orderPageUploadedImageViewSizeHeight = uiWidth >= 1048 ? '500px' : uiWidth >= 768 ? '60%' : '60%';
 
-                    };
+                            orderPageUploadedImageView.style.animation = 'none';
+                            orderPageUploadedImageView.style.width = '100%';
+                            orderPageUploadedImageView.style.height = '100%';
+                            orderPageUploadedImageView.style.maxWidth = orderPageUploadedImageViewSize;
+                            orderPageUploadedImageView.style.maxHeight = orderPageUploadedImageViewSizeHeight;
+                            orderPageUploadedImageView.style.boxShadow = '5px 10px 10px 5px rgb(218, 211, 211)';
 
-                    reader.readAsDataURL(orderPageUploadFileImage.files[0]);
-                    orderPageMainSectionHeadline.innerHTML = orderPageUploadFileImage.value.split(/\\|\//)[orderPageUploadFileImage.value.split(/\\|\//).length - 1];
+                        };
 
-                    orderPageFileUploadResetNextButtons.style.display = 'block';
-                    orderPageUploadFileImage.disabled = true;
-                    orderPageFileUploadSectionLabel.style.cursor = 'auto';
-                    orderPageFileUploadSectionLabel.style.background = '#D4C7AF';
+                        reader.readAsDataURL(orderPageUploadFileImage.files[0]);
+                        orderPageMainSectionHeadline.innerHTML = orderPageUploadFileImage.value.split(/\\|\//)[orderPageUploadFileImage.value.split(/\\|\//).length - 1];
+
+                        orderPageFileUploadResetNextButtons.style.display = 'block';
+                        orderPageUploadFileImage.disabled = true;
+                        orderPageFileUploadSectionLabel.style.cursor = 'auto';
+                        orderPageFileUploadSectionLabel.style.background = '#D4C7AF';
+                    }
+                    else
+                    {
+                        orderPageCenterAlertPopup.style.display = 'flex';
+                        orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
+                        orderPageCenterAlertPopupContentText.innerHTML = 'Please select a file less than 5MB';
+                    }
 
                 }
             }

@@ -129,6 +129,17 @@
     width: 80%;
 }
 
+.order-page-file-upload-section h6 {
+    margin-bottom: var(--order-page-file-upload-section-h3-margin-bottom);
+    text-transform: uppercase;
+    font-family: var(--secondary-font-theme);
+    margin-top: var(--order-page-file-upload-section-h3-margin-top);
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+}
+
 .order-page-file-upload-section label {
     cursor: pointer;
     background-color: var(--order-page-file-upload-section-label-bg);
@@ -577,13 +588,13 @@
     animation-fill-mode: forwards;
     opacity: 0;
 }
-.order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section .final-due-date {
+/* .order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section {
     display: flex;
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
-}
-.order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section .final-due-date input[type="date"] {
+} */
+.order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section input[type="date"] {
     width: 70%;
     margin-left: auto;
     opacity: 0;
@@ -869,22 +880,24 @@
 .final-order-section .right-side-details .uploaded-image {
     left: 50%;
     width: 100%;
-    height: 60%;
+    height: 450px;
     background-color: transparent;
     box-sizing: border-box;
     text-align: center;
     border-radius: 20px;
     margin-top: -10px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object-fit: contain;
 }
 
 .final-order-section .right-side-details .uploaded-image img {
     max-width: 100%;
     max-height: 100%;
     border-radius: 10px;
-}
-.final-order-section .right-side-details .uploaded-image img
-{
+    object-fit: cover;
     box-shadow: 10px 10px 10px 1px #bfbab5;
 }
 
@@ -1321,6 +1334,9 @@
     .order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section .final-due-date input[type="date"] {
         width: 100%;
     }
+    .order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section input[type="date"] {
+        width: 100%;
+    }
 }
 
 @media (max-width: 325px) {
@@ -1690,3 +1706,10 @@
         width: 90%;
     }
 } 
+
+
+@media (max-device-width: 767px) and (orientation: landscape) {
+    .order-page-uploaded-file-details-entry-subsection1 .details-entry-step3 .provide-user-expected-date-section p {
+       margin-top: -20vh;
+    }
+}
