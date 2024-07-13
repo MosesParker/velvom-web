@@ -358,14 +358,6 @@ footer {
     .title-icon img {
         max-width: 4rem;
     }
-    .social-link-for-desktop ul li {
-        height: 45px;
-    }
-    .social-link-for-desktop ul li i {
-        width: 35px;
-        height: 35px;
-        padding: 5px;
-    }
 	.content__item {
 		--aspect-ratio: 500/400;
 	}
@@ -381,14 +373,6 @@ footer {
 
 .title-icon img {
     max-width: 5rem;
-}
-
-.social-link-for-desktop {
-    display: none;
-}
-
-.social-link-for-mobile-tab {
-    display: block;
 }
 .content__item {
 	--aspect-ratio: 500/450;
@@ -418,14 +402,6 @@ footer {
 
     .title-icon img {
         max-width: 3rem;
-    }
-
-    .social-link-for-desktop {
-        display: none;
-    }
-
-    .social-link-for-mobile-tab {
-        display: block;
     }
 	.content__item {
 		--aspect-ratio: 500/500;

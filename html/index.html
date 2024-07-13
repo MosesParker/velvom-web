@@ -41,11 +41,101 @@
             --menu-bar-bg-color-span:#FFE8D2;
         }
     </style>
+
+    <!-- JavaScript files if needed -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.ripples.js"></script>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/gsap.min.js"></script>
+    <script src="../js/anime.min.js"></script>
+    <script>
+        const textContainer = document.getElementById("dynamic-text");
+
+        const repeatedText = "Arts & Design |".repeat(10000);
+        textContainer.textContent = repeatedText;
+
+        const btn = document.querySelector(".loader-title-text");
+
+
+        gsap.to(".loader-title-text", 1, {
+            opacity: 0,
+            y: -30,
+            ease: Expo.easeInOut,
+            display: 'none',
+        });
+
+        gsap.to(".loader-bg-dynamic-text > div", 1, {
+            x: "100",
+            ease: Expo.easeInOut,
+            delay: 1,
+            stagger: 0.1,
+        });
+
+        gsap.to(".loader-bg-dynamic-text", 3, {
+            y: -600,
+            scale: 4.5,
+            rotate: -90,
+            ease: Expo.easeInOut,
+            delay: 1,
+        });
+
+        gsap.to(".text", 1, {
+            opacity: 1,
+            ease: Expo.easeInOut,
+            delay: 2,
+        });
+
+        gsap.to(".loader-bg-dynamic-text > div", 4, {
+            x: "-3500",
+            ease: Expo.easeInOut,
+            delay: 2.5,
+            stagger: 0.05,
+            opacity: 0
+        });
+
+        gsap.to(".loader-bg-color", 2, {
+            bottom: "-100%",
+            ease: Expo.easeInOut,
+            delay: 4,
+        });
+
+        var loader = document.getElementById("pre-loader-animation");
+
+        window.addEventListener("load", function() {
+           
+            setTimeout(function () {
+
+                loader.style.display="none";
+
+            document.getElementById("after-pre-loader").style.display = 'block';
+
+            anime.timeline().add({
+                targets: ".after-pre-loader",
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 2000,
+                delay: (el, i) => 500 + 40 * i,
+            });
+
+            AOS.init();
+            $('.home-bg-image').ripples({
+                resolution: 500,
+                dropRadius: 20,
+                perturbance: 0.03,
+                color: 'rgba(255, 255, 0, 0.6)'
+            });
+
+            }, 4000);
+        });
+        </script>
 </head>
 
 <body id="body">
 
-    <div class="pre-loader-animation">
+    <div class="pre-loader-animation" id="pre-loader-animation">
         <button class="loader-title-text">VELVOM</button>
         <div class="loader-bg-color"></div>
         <div class="loader-bg-dynamic-text">
@@ -701,10 +791,10 @@
                     <input type="email" name="email" placeholder="Enter your Email-ID..."><br />
                     <textarea cols="20" rows="5" placeholder="Message..." aria-expanded="false"></textarea>
 
-                    <!-- <div id="updateMessageContainer" class="successMessage">
+                    <div id="updateMessageContainer" class="successMessage">
                         <i class="fa fa-check-circle"></i>
-                        <font style="color:green">Successfully Saved.</font>
-                    </div> -->
+                        <font style="color:green">Successfully Saved. Please wait for some time.</font>
+                    </div>
 
                     <div class="slice_button" data-aos="fade-right" data-aos-duration="1000">
                         <a class="btn-slice" href="#" style="background: #ACBEA3;">
@@ -760,88 +850,9 @@
         </div>
 
     </div>
-    <!-- JavaScript files if needed -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/jquery.ripples.js"></script>
+    
 
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/aos.js"></script>
-    <script src="../js/script.js"></script>
-    <script src="../js/gsap.min.js"></script>
-    <script src="../js/anime.min.js"></script>
-    <script>
-        const textContainer = document.getElementById("dynamic-text");
-
-        const repeatedText = "Arts & Design |".repeat(10000);
-        textContainer.textContent = repeatedText;
-
-        const btn = document.querySelector(".loader-title-text");
-
-
-        gsap.to(".loader-title-text", 1, {
-            opacity: 0,
-            y: -30,
-            ease: Expo.easeInOut,
-            display: 'none',
-        });
-
-        gsap.to(".loader-bg-dynamic-text > div", 1, {
-            x: "100",
-            ease: Expo.easeInOut,
-            delay: 1,
-            stagger: 0.1,
-        });
-
-        gsap.to(".loader-bg-dynamic-text", 3, {
-            y: -600,
-            scale: 4.5,
-            rotate: -90,
-            ease: Expo.easeInOut,
-            delay: 1,
-        });
-
-        gsap.to(".text", 1, {
-            opacity: 1,
-            ease: Expo.easeInOut,
-            delay: 2,
-        });
-
-        gsap.to(".loader-bg-dynamic-text > div", 4, {
-            x: "-3500",
-            ease: Expo.easeInOut,
-            delay: 2.5,
-            stagger: 0.05,
-            opacity: 0
-        });
-
-        gsap.to(".loader-bg-color", 2, {
-            bottom: "-100%",
-            ease: Expo.easeInOut,
-            delay: 4,
-        });
-       
-
-        setTimeout(function () {
-            document.getElementById("after-pre-loader").style.display = 'block';
-
-            anime.timeline().add({
-                targets: ".after-pre-loader",
-                opacity: [0, 1],
-                easing: "easeOutExpo",
-                duration: 2000,
-                delay: (el, i) => 500 + 40 * i,
-            });
-
-
-            AOS.init();
-            $('.home-bg-image').ripples({
-                resolution: 500,
-                dropRadius: 20,
-                perturbance: 0.03,
-                color: 'rgba(255, 255, 0, 0.6)'
-            });
-
-        }, 5500);
+        <script>
 
         const homePageCenterAlertPopup = document.getElementById('common-section-center-alert-popup');
         const homePageCenterAlertPopupContentTextForOriginalArts = document.getElementById('common-section-center-alert-popup-content');

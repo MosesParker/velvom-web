@@ -71,31 +71,37 @@
     </div>
     <nav data-aos="fade-right" data-aos-duration="3000" class="social-link-for-desktop">
         <ul>
-            <li class="social-li-link1"><a href="https://www.instagram.com/artfromheart2020/"
+            <li class="social-li-link1"><a href="https://www.instagram.com/artfromheart2020/" target="_blank"
                     class="social-link-for-desktop-link1"><i class="fa fa-instagram"></i></a></li>
-            <li class="social-li-link2"><a href="https://chat.whatsapp.com/IFuV7kf6T9MJMR0jAdyuF8"
-                    class="social-link-for-desktop-link2" style="font-size: 20px;"><i class="fa fa-whatsapp"></i></a>
-            </li>
-            <li class="social-li-link3"><a href="https://www.youtube.com/@velvomarts"
+            <li class="social-li-link2"><a href="https://chat.whatsapp.com/IFuV7kf6T9MJMR0jAdyuF8" target="_blank"
+                    class="social-link-for-desktop-link2" style="font-size: 20px;"><i
+                        class="fa fa-whatsapp"></i></a></li>
+            <li class="social-li-link3"><a href="https://www.youtube.com/@velvomarts" target="_blank"
                     class="social-link-for-desktop-link3" style="font-size: 20px;"><i class="fa fa-youtube"></i></a>
             </li>
-            <li class="social-li-link4"><a href="https://www.linkedin.com/in/velvom-arts-and-designs-b73055237/"
-                    class="social-link-for-desktop-link4" style="font-size: 20px;"><i class="fa fa-linkedin"></i></a>
-            </li>
+            <li class="social-li-link4"><a href="https://in.pinterest.com/velvomcaricatiure/" target="_blank"
+                    class="social-link-for-desktop-link4" style="font-size: 20px;"><i
+                        class="fa fa-pinterest"></i></a></li>
         </ul>
     </nav>
     <div class="social-link-for-mobile-tab">
         <div class="social-link-for-mobile-tab-shareicon">
             <i class="fa fa-share-alt"></i>
         </div>
-        <div class="social-link-for-mobile-tab-link1">
-            <i class="fa fa-instagram"></i>
+        <div class="social-link-for-mobile-tab-link social-link-for-mobile-tab-link1">
+            <a href="https://www.instagram.com/artfromheart2020/" target="_blank"><i
+                    class="fa fa-instagram"></i></a>
         </div>
-        <div class="social-link-for-mobile-tab-link2">
-            <i class="fa fa-whatsapp"></i>
+        <div class="social-link-for-mobile-tab-link social-link-for-mobile-tab-link2">
+            <a href="https://chat.whatsapp.com/IFuV7kf6T9MJMR0jAdyuF8" target="_blank"><i
+                    class="fa fa-whatsapp"></i></a>
         </div>
-        <div class="social-link-for-mobile-tab-link3">
-            <i class="fa fa-youtube"></i>
+        <div class="social-link-for-mobile-tab-link social-link-for-mobile-tab-link3">
+            <a href="https://www.youtube.com/@velvomarts" target="_blank"><i class="fa fa-youtube"></i></a>
+        </div>
+        <div class="social-link-for-mobile-tab-link social-link-for-mobile-tab-link4">
+            <a href="https://in.pinterest.com/velvomcaricatiure/" target="_blank"><i
+                    class="fa fa-pinterest"></i></a>
         </div>
     </div>
 
@@ -140,7 +146,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group input-field">
-                                                <select name="userSelectedState">
+                                                <select name="userSelectedState" onchange="enabledDistrict()">
                                                     <option value="0">--- Select State ---</option>
                                                     <option value="1">Tamil Nadu</option>
                                                 </select>
@@ -148,7 +154,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group input-field">
-                                                <select name="userSelectedDistrict">
+                                                <select name="userSelectedDistrict" id="userSelectedDistrict" title="Please select the state first" disabled>
                                                     <option value="0">--- Select District ---</option>
                                                     <option value="1">Chennai</option>
                                                     <option value="1">Vellore</option>
@@ -183,7 +189,7 @@
                                             <p class="painting-type" data-aos="fade-up" data-aos-duration="2000">Hand-Drawn | Color Caricature</p>
                                         </div>
                                         <div class="dbox uploaded-image">
-                                            <img src="../images/home-section2-slider3.jpg">
+                                            <img src="c:\Users\GK\Downloads\Moses_Image.jpeg">
                                         </div>
                                         <div class="dbox uploaded-image-amount" >
                                             <p> Face-Only</p>
@@ -278,6 +284,12 @@
 			orderPageCenterAlertPopup.style.display = 'flex';
 			orderPageCenterAlertPopup.style.animation = 'moving_invalid_alert_popup_top_to_bottom 3s 1';
 		}
+
+        function enabledDistrict()
+        {
+        	document.getElementById('userSelectedDistrict').disabled=false;
+        	document.getElementById('userSelectedDistrict').title='';
+        }
 
     </script>
 

@@ -134,23 +134,15 @@
                     if (flag == 0) {
                         // Calculate the desired top value based on the UI width
                         var uiWidth = $(window).width();
-                        var topValue = uiWidth <= 768 ? '50%' : '50%';
+                        var topValue1 = uiWidth <= 700 ? '59%' : uiWidth <= 800 ? '59%' : '40%';
+                        var topValue2 = uiWidth <= 700 ? '67%' : uiWidth <= 800 ? '67%' : '45%';
+                        var topValue3 = uiWidth <= 700 ? '75%' : uiWidth <= 800 ? '75%' : '50%';
+                        var topValue4 = uiWidth <= 700 ? '83%' : uiWidth <= 800 ? '83%' : '55%';
             
-                        $(this).siblings('.social-link-for-mobile-tab-link1').animate({
-                            top: topValue
-                        }, 200);
-            
-                        $(this).siblings('.social-link-for-mobile-tab-link2').delay(200).animate({
-                            top: topValue === '50%' ? '60%' : '60%' // Adjust the second element's top value accordingly
-                        }, 200);
-            
-                        $(this).siblings('.social-link-for-mobile-tab-link3').delay(300).animate({
-                            top: topValue === '50%' ? '70%' : '70%' // Adjust the third element's top value accordingly
-                        }, 200);
-
-                        $(this).siblings('.social-link-for-mobile-tab-link4').delay(400).animate({
-                            top: topValue === '50%' ? '80%' : '80%' // Adjust the fourth element's top value accordingly
-                        }, 200);
+                        $(this).siblings('.social-link-for-mobile-tab-link1').animate({top: topValue1}, 200);
+                        $(this).siblings('.social-link-for-mobile-tab-link2').animate({top: topValue2}, 200);
+                        $(this).siblings('.social-link-for-mobile-tab-link3').animate({top: topValue3}, 200);
+                        $(this).siblings('.social-link-for-mobile-tab-link4').animate({top: topValue4}, 200);
             
                         $('.social-link-for-mobile-tab-link1 i,.social-link-for-mobile-tab-link2 i, .social-link-for-mobile-tab-link3 i, .social-link-for-mobile-tab-link4 i').delay(500).fadeIn(200);
                         flag = 1;

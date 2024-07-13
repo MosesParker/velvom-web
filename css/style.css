@@ -2453,14 +2453,6 @@ footer {
     .title-icon img {
         max-width: 4rem;
     }
-    .social-link-for-desktop ul li {
-        height: 45px;
-    }
-    .social-link-for-desktop ul li i {
-        width: 35px;
-        height: 35px;
-        padding: 5px;
-    }
     main .slice_button {
         margin-top: 30px;
     }
@@ -2537,14 +2529,6 @@ footer {
 
     .title-icon img {
         max-width: 5rem;
-    }
-
-    .social-link-for-desktop {
-        display: none;
-    }
-
-    .social-link-for-mobile-tab {
-        display: block;
     }
 
     .home-bg-image {
@@ -2982,10 +2966,6 @@ footer {
 
 /** =========================================================== */
 @media (max-width: 900px) {
-
-    .social-link-for-mobile-tab {
-        display: none;
-    }
     .home-page-section3 .carousel-inner .carousel-item .column-slider {
         width: 100%;
         height: 500px;
@@ -3033,6 +3013,13 @@ footer {
     .event-registration-body .event-form .right-side form .successMessage   {
      width: 100%;
     }
+    .center-subtitle {
+        color: #fff;
+    }
+    .home-page-section10 .right-side form .successMessage
+    {
+        position: relative;
+    }
     
 }
 
@@ -3056,15 +3043,6 @@ footer {
     .title-icon img {
         max-width: 3rem;
     }
-
-    .social-link-for-desktop {
-        display: none;
-    }
-
-    .social-link-for-mobile-tab {
-        display: block;
-    }
-
 
     .home-bg-image {
         padding: 10px;
