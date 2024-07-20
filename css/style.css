@@ -490,11 +490,11 @@ p {
 .home-bg-image {
     width: 100%;
     min-height: 100vh;
-    background: var(--home-hero-section-bg-img) no-repeat;
-    
-    background-size: 100% auto;
+    background: url('https://images.pexels.com/photos/102127/pexels-photo-102127.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat;
+    background-color: #DEB07C;
+     background-size: 100% auto;
     background-position: center;
-    object-fit: cover;
+   object-fit: cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -959,17 +959,21 @@ main {
 
 .home-page-section7 .column .order-now-description h1 {
     font-size: 3rem;
+    font-family: var(--secondary-font-theme);
+   
 }
 
 .home-page-section7 .column .order-now-description p {
     font-size: 1.5rem;
     margin-top: 2em;
     width: 90%;
+    font-family: var(--secondary-font-theme);
 }
 
 .home-page-section7 .column .order-now-description h6 {
     font-size: 1rem;
     margin-top: 50px;
+    font-family: var(--secondary-font-theme);
 }
 
 .home-page-section7 .column .floating-icons {
@@ -2661,13 +2665,22 @@ footer {
     .home-page-section7 .section-headings {
         font-size: var(--font-size-tab-lap-devices-for-header-text);
     }
-    
-    .home-page-section10 .right-side form {
-        width: 90%;
-    }
+
     .home-page-section10 .section-headings {
         font-size: var(--font-size-tab-lap-devices-for-header-text);
     }
+    .contact-form .column
+    {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .home-page-section10 .right-side form {
+        width: 95%;
+    }
+    .contact-us-body .contact-form .right-side form {
+        width: 100%;
+    }
+    
     .velvom-footer-details .right-side {
         display: block;
         text-align: left;
@@ -3020,6 +3033,17 @@ footer {
     {
         position: relative;
     }
+    .contact-form .column
+    {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .home-page-section10 .right-side form {
+        width: 95%;
+    }
+    .contact-us-body .contact-form .right-side form {
+        width: 100%;
+    }
     
 }
 
@@ -3046,6 +3070,7 @@ footer {
 
     .home-bg-image {
         padding: 10px;
+        background-size: cover;
     }
 
     .home-bg-image main .center-title {
@@ -3270,10 +3295,6 @@ footer {
     /** Enquiry Section - DESIGN LOGIC START */
     .home-page-section10 .section-headings {
         font-size: var(--font-size-mobile-devices-for-header-text);
-    }
-
-    .home-page-section10 .right-side form {
-        width: 95%;
     }
 
     /** Enquiry Section - DESIGN LOGIC END */
@@ -3505,10 +3526,10 @@ footer {
     {
         flex-direction: column;
     }
-    .home-section5-popup-left-side
+    /* .home-section5-popup-left-side
     {
         background: none;
-    }
+    } */
     
     .home-section5-popup-right-side .painting-description .description-row .title {
         flex: 0 0 150px; 
@@ -3544,6 +3565,7 @@ footer {
     {
        flex-direction: column;
        gap: 10px;
+       border-radius: 10px;
     }
     
     .common-section-center-alert-popup-content
