@@ -518,7 +518,7 @@
     transform: skew(0deg, -30deg);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 800px) {
 
 .social-link-for-desktop
 {

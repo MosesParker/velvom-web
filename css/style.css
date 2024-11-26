@@ -3838,6 +3838,14 @@ footer {
         display: none;
     }
 }
-
-
+@media (max-height: 870px) {
+    .home-bg-image {
+        background-size: cover;
+    }
+}
+@media (max-height: 650px) {
+    .moving-scroll-down-icon {
+        display: none;
+    }
+}
 
